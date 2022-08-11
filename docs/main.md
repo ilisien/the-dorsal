@@ -15,11 +15,12 @@
 
 - setting up django
     - [initialization](setup/init.md)
-    - (wip) [mostly static](setup/mostly-static/main.md)
-        - (wip) [home page](setup/mostly-static/main.md#apply-page)
-        - (wip) about
-        - (wip) contact
-        - (wip) apply
+- apps/pages
+    - (wip) [mostly static](apps-pages/mostly-static.md)
+        - (wip) [home page](apps-pages/mostly-static.md#home-page)
+        - (wip) [about page](apps-pages/mostly-static.md#about-page)
+        - (wip) [contact page](apps-pages/mostly-static.md#contact-page)
+        - (wip) [apply page](apps-pages/mostly-static.md#apply-page)
     - (wip) staff pages
     - (wip) articles
     - (wip) photography
