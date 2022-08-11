@@ -22,5 +22,5 @@
         - (wip) [contact page](apps-pages/mostly-static.md#contact-page)
         - (wip) [apply page](apps-pages/mostly-static.md#apply-page)
     - (wip) staff pages
-    - (wip) articles
+    - (wip) [articles](apps-pages/articles.md)
     - (wip) photography
