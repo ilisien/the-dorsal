@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +34,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'articles', # articles app
     'django_sass_compiler', # compiles static scss to css with `$ python manage.py sass-compiler --watch` - documentation at https://github.com/jaberbu/django-sass-compiler
+
+    'ckeditor',
+    'ckeditor_uploader',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -136,11 +140,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static")
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CKEDITOR SETTINGS
+# https://django-ckeditor.readthedocs.io/en/latest/#django-ckeditor
+
+# where ckeditor will store uploads, will be inside the default "media" folder
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
 
 # WAGTAIL SETTINGS
 
