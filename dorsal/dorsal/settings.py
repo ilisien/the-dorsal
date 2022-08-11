@@ -38,21 +38,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
 
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail',
-
-    'taggit',
-    'modelcluster',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,8 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'dorsal.urls'
@@ -156,30 +139,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # where ckeditor will store uploads, will be inside the default "media" folder
 CKEDITOR_UPLOAD_PATH = "uploads/"
-
-
-
-# WAGTAIL SETTINGS
-
-# This is the human-readable name of your Wagtail install
-# which welcomes users upon login to the Wagtail admin.
-WAGTAIL_SITE_NAME = 'SciTech Dorsal'
-
-WAGTAILADMIN_BASE_URL = "wagtail-admin"
-
-# Replace the search backend
-#WAGTAILSEARCH_BACKENDS = {
-#  'default': {
-#    'BACKEND': 'wagtail.search.backends.elasticsearch5',
-#    'INDEX': 'myapp'
-#  }
-#}
-
-# Wagtail email notifications from address
-# WAGTAILADMIN_NOTIFICATION_FROM_EMAIL = 'wagtail@myhost.io'
-
-# Wagtail email notification format
-# WAGTAILADMIN_NOTIFICATION_USE_HTML = True
-
-# Reverse the default case-sensitive handling of tags
-TAGGIT_CASE_INSENSITIVE = True
