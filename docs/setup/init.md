@@ -1,4 +1,3 @@
-<!-- updated aug 10th 2022 by ian lisien -->
 <!-- this piece of documentation asssumes Ubuntu 22.04 as the development platform, see ian lisien or whoever is currently the lead web developer for compatability concerns-->
 # initialization of django environment
 - create "dorsal" directory

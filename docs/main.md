@@ -1,4 +1,3 @@
-<!-- updated aug 10th 2022 by ian lisien -->
 # the scitech dorsal newspaper website
 #### the goals of this site are to:
 - allow a place for "the scitech dorsal" staff to publish the following:
@@ -10,8 +9,9 @@
 - be easily navigable + accessible + maintainable
 - always have entirely open source code
 
-#### if you are looking for documentation for code, see the below table of contents:
-(this document uses wikilinks from the "Foam" visual studio code extension)
+#### see developement environment setup [here](devenv.md)
+
+#### if you are looking for documentation for steps taken to get to this point, see the below table of contents:
 
 - setting up django
-    - [[initialization|setup/init]]
+    - [initialization](setup/init.md)
