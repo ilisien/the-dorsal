@@ -1,8 +1,6 @@
 from django.db import models
 
-from ckeditor.fields import RichTextField
-from ckeditor_uploader.fields import RichTextUploadingField
-
+from wagtail.fields import RichTextField
 
 
 class Article(models.Model):
