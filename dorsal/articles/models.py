@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
+
+
+
+class Article(models.Model):
+    title = models.TextField(max_length=100)
