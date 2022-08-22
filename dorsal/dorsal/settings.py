@@ -32,8 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'articles', # articles app
+    'articles',
     'staff',
+
     'django_sass_compiler', # compiles static scss to css with `$ python manage.py sass-compiler --watch` - documentation at https://github.com/jaberbu/django-sass-compiler
 
     'wagtail.contrib.forms',
