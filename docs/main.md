@@ -1,4 +1,5 @@
 # the scitech dorsal newspaper website
+[info for staff](setup/staff-info.md)
 #### the goals of this site are to:
 - allow a place for "the scitech dorsal" staff to publish the following:
     - news articles

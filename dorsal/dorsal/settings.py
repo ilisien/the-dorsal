@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'articles', # articles app
-    'employees',
+    'staff',
     'django_sass_compiler', # compiles static scss to css with `$ python manage.py sass-compiler --watch` - documentation at https://github.com/jaberbu/django-sass-compiler
 
     'wagtail.contrib.forms',
@@ -90,7 +90,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dorsal.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -161,7 +160,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 # This is the human-readable name of your Wagtail install
 # which welcomes users upon login to the Wagtail admin.
 WAGTAIL_SITE_NAME = 'Sci-Tech Dorsal'
-
+WAGTAILADMIN_BASE_URL = ''
 # Replace the search backend
 #WAGTAILSEARCH_BACKENDS = {
 #  'default': {
@@ -178,3 +177,7 @@ WAGTAIL_SITE_NAME = 'Sci-Tech Dorsal'
 
 # Reverse the default case-sensitive handling of tags
 TAGGIT_CASE_INSENSITIVE = True
+
+
+# extra staffer fields settings
+
