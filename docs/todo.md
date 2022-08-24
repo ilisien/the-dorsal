@@ -1,0 +1,1 @@
+- [ ] make ui wagtail themed, user friendly for ReadOnlyPanel in articles.edit_handlers

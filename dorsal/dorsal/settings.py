@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 
     'django_sass_compiler', # compiles static scss to css with `$ python manage.py sass-compiler --watch` - documentation at https://github.com/jaberbu/django-sass-compiler
 
+    'wagtail.contrib.modeladmin',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -180,5 +181,5 @@ WAGTAILADMIN_BASE_URL = ''
 TAGGIT_CASE_INSENSITIVE = True
 
 
-# extra staffer fields settings
+USE_TZ = True
 
