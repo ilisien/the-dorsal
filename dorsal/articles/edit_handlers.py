@@ -2,7 +2,7 @@ from django.utils.html import format_html
 from django.utils.html import mark_safe
 from wagtail.admin.edit_handlers import EditHandler
 
-
+# almost entirely created by @BertrandBordage on github in the below wagtail issue, slight modernization by ilisien to allow for it to work in wagtail 3.1
 class ReadOnlyPanel(EditHandler):
     """ ReadOnlyPanel EditHandler Class - built from ideas on https://github.com/wagtail/wagtail/issues/2893
         Most credit to @BertrandBordage for this.

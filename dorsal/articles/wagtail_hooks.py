@@ -10,7 +10,7 @@ from django.utils.safestring import mark_safe
 
 from .edit_handlers import ReadOnlyPanel
 
-
+# panel presets, for different types of admin views
 readonly_panels = [
     ReadOnlyPanel("author"),
     ReadOnlyPanel("section"),
@@ -83,56 +83,45 @@ superuser_panels = [
 ]
 
 
-@hooks.register('construct_main_menu')
-def hide_pages_sidebar_item(request,menu_items):
-    #print([item.name for item in menu_items])
-    menu_items[:] = [item for item in menu_items if item.name not in ['explorer','documents']] # remove sidebar items in this list
-
 class ArticleCreateView(CreateView):
+    # view refrenced when an Article model is created in the admin site
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
 
         instance = self.get_instance()
         user = request.user
 
-        if user.is_superuser:
+        if user.is_superuser: # is user a superuser?
             panels = superuser_panels
-        elif user == instance.author:
+        elif user == instance.author: # is user editing their own article?
             panels = author_panels
         else:
-            if user.groups.filter(name="Editors").exists():
-                panels = editor_panels
-            else:
-                panels = readonly_panels
-            
-
-        print(request.user)
+            pass
         self.edit_handler = ObjectList(panels).bind_to_model(model=Article)
 
 class ArticleEditView(EditView):
-
+    # view refrenced when an Article model is edited in the admin site
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
 
         instance = self.get_instance()
         user = request.user
 
-
-        if user.is_superuser:
+        if user.is_superuser: # is user a superuser?
             panels = superuser_panels
-        elif user == instance.author:
+        elif user == instance.author: # is user editing their own article?
             panels = author_panels
-        else:
-            if user.groups.filter(name="Editors").exists():
+        else: # if user is neither a superuser nor editing their own article
+            if user.groups.filter(name="Editors").exists() and instance.needs_approval: # is user a part of the "Editors" group? and the article needs editing?
                 panels = editor_panels
-            else:
+            else: # is user a non-editor looking at an article that is not their own?
                 panels = readonly_panels
             
-
         print(request.user)
         self.edit_handler = ObjectList(panels).bind_to_model(model=Article)
 
 class ArticleAdmin(ModelAdmin):
+    # Modeladmin basic configuration mostly
     model = Article
     menu_label = 'Articles'
     menu_icon = "edit"

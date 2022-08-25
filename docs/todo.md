@@ -1,1 +1,2 @@
 - [ ] make ui wagtail themed, user friendly for ReadOnlyPanel in articles.edit_handlers
+- [ ] make article createview modeladmin update the Article model with the current user as author field

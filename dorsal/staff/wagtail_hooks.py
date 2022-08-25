@@ -10,6 +10,7 @@ def hide_pages_sidebar_item(request,menu_items):
 
 @hooks.register('register_account_settings_panel')
 class ProfileSettingsPanel(BaseSettingsPanel):
+    # change wagtail account settings to include the profile settings
     name = "profile"
     title = "Profile Settings"
     order = 150
