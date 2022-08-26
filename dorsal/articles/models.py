@@ -15,6 +15,12 @@ class Article(models.Model):
         TECHNOLOGY = "TEC", "technology"
         SPORTS = "SPT", "sports"
         BLOG = "BLG", "blog"
+    
+    class Priority(models.IntegerChoices):
+        LOW = 0, "low"
+        NORMAL = 1, "normal"
+        HIGH = 2, "high"
+        HIGHEST = 3, "highest"
 
     author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True, blank=True)
 
@@ -34,6 +40,9 @@ class Article(models.Model):
 
     published = models.BooleanField(default=False,verbose_name="publish")
     pub_date = models.DateTimeField(blank=True, null=True,verbose_name="date published")
+
+    # for superusers/editors in chief
+    priority = models.IntegerField(choices=Priority.choices,default=Priority.NORMAL)
 
     def __str__(self):
         return self.title

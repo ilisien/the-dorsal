@@ -29,6 +29,7 @@ readonly_panels = [
         ReadOnlyPanel("published"),
         ReadOnlyPanel("pub_date"),
     ]),
+    ReadOnlyPanel("priority"),
 ]
 
 author_panels = [
@@ -40,6 +41,15 @@ author_panels = [
         FieldPanel("needs_approval"),
         ReadOnlyPanel("needs_approval_date"),
     ]),
+    FieldRowPanel([
+        ReadOnlyPanel("approved"),
+        ReadOnlyPanel("approved_date"),
+    ]),
+    FieldRowPanel([
+        ReadOnlyPanel("published"),
+        ReadOnlyPanel("pub_date"),
+    ]),
+    ReadOnlyPanel("priority"),
 ]
 
 editor_panels = [
@@ -60,6 +70,7 @@ editor_panels = [
         FieldPanel("published"),
         ReadOnlyPanel("pub_date"),
     ]),
+    ReadOnlyPanel("priority"),
 ]
 
 superuser_panels = [
@@ -80,6 +91,7 @@ superuser_panels = [
         FieldPanel("published"),
         ReadOnlyPanel("pub_date"),
     ]),
+    FieldPanel("priority"),
 ]
 
 
