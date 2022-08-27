@@ -19,7 +19,7 @@ urlpatterns = [
     path('documents/', include(wagtaildocs_urls)),
 
     path("",redirect_to_home),
-    path("home/",include(home_urls))
+    path("home/",include(home_urls),name='home')
 ]
 
 

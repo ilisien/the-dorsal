@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'articles',
     'staff',
 
-    'django_sass_compiler', # compiles static scss to css with `$ python manage.py sass-compiler --watch` - documentation at https://github.com/jaberbu/django-sass-compiler
+    'django_sass',
 
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.forms',
@@ -141,6 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static")
 
 
@@ -151,12 +154,6 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# CKEDITOR SETTINGS
-# https://django-ckeditor.readthedocs.io/en/latest/#django-ckeditor
-
-# where ckeditor will store uploads, will be inside the default "media" folder
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
 # WAGTAIL SETTINGS

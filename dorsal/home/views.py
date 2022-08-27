@@ -14,7 +14,8 @@ def index(request):
     politics_articles = published_articles.filter(section=Article.Section.POLITICS).order_by('-pub_date')[:3]
     tech_articles = published_articles.filter(section=Article.Section.TECHNOLOGY).order_by('-pub_date')[:3]
     sports_articles = published_articles.filter(section=Article.Section.SPORTS).order_by('-pub_date')[:3]
-    recent_articles = published_articles.order_by('-pub_date')[:20].order_by('-priority')
+    recent_nonprioritized = published_articles.order_by('-pub_date').values_list('pk',flat=True)[:20]
+    recent_articles = published_articles.filter(pk__in=list(recent_nonprioritized)).order_by('-priority')
 
     context = {
         'scitech_articles':scitech_articles,
@@ -23,7 +24,9 @@ def index(request):
         'tech_articles':tech_articles,
         'sports_articles':sports_articles,
         'recent_articles':recent_articles,
-    }.update(get_global_context())
+    }
+    context.update(get_global_context())
+    print(str(context))
     return render(request,'home/index.html', context)
 
 def contact(request):

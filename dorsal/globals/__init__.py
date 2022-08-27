@@ -1,11 +1,12 @@
 import zoneinfo
 from django.conf import settings
 from django.utils import timezone
+from collections import namedtuple
 
 TIME_ZONE = settings.TIME_ZONE #maybe there could be a selector for timezone in the future
 
 class Periods:
-    NO_SCHOOL = ""
+    NO_SCHOOL = "Not in session"
     BREAKFAST = "Breakfast"
     PER1 = "Homeroom"
     PER2 = "2nd Period"
@@ -20,6 +21,7 @@ class Schedules:
     WEDNESDAY = 1
     DELAYED = 2
 
+Nav = namedtuple("Nav",("str","path"))
 
 def get_period(datetime,schedule=None):
     time = timezone.localtime(datetime).strftime("%H:%M")
@@ -89,9 +91,20 @@ def get_period(datetime,schedule=None):
 def get_global_context():
     datetime = timezone.now()
     period = get_period(datetime)
+    navlinks = [
+        Nav("at scitech","/scitech/"),
+        Nav("in pittsburgh","/pittsburgh/"),
+        Nav("politics","/politics/"),
+        Nav("technology","/tech/"),
+        Nav("sports","/sports/"),
+        Nav("photography","/photos/"),
+        Nav("open data","/open-data/"),
+    ]
+    print(period)
 
     context = {
-        'datetime':datetime,
+        'datetime':timezone.localtime(datetime),
         'period':period,
+        'navlinks':navlinks,
     }
     return context
