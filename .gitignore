@@ -3,3 +3,4 @@ dorsal/env/
 db.sqlite3
 /static/
 media/
+/dorsal/dorsal/*.txt

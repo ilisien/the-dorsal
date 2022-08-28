@@ -21,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#ps$ajg)glh*y_vzisrvgcxlodtfn4nv$(wegs!ido3$kx^m37'
+with open(os.path.join(BASE_DIR,"dorsal/secret.txt")) as secret_file:
+    SECRET_KEY = secret_file.read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+with open(os.path.join(BASE_DIR,"dorsal/allowed_hosts.txt")) as hosts_file:
+    lines = hosts_file.readlines()
+    ALLOWED_HOSTS = [line.rstrip() for line in lines]
 
 
 # Application definition

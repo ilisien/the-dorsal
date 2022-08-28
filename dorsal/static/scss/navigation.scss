@@ -9,6 +9,8 @@ a {
     color:black;
 }
 
+$wide-cutoff: 1132px;
+
 .nav-wrapper {
     position: fixed;
     top: 0;
@@ -19,10 +21,12 @@ a {
     border-bottom: 1px;
     border-color: black;
     border-bottom-style: solid;
+    min-height: 10vh;
 
     svg.negative-fin {
         position:absolute;
         z-index: -1000;
+        height: 80%;
         
         .right-stop {
             stop-color: #fca;
@@ -35,23 +39,47 @@ a {
 }
 
 .left-nav {
-    /*position: absolute;
-    left:13px;
-    bottom:13px;*/
     display:flex;
     flex-direction: column;
     margin-right:auto;
-    padding:20px 13px 13px 13px;
+    padding:20px 0 13px 13px;
     justify-content: space-between;
     
     .menu-wrapper {
         display: flex;
         align-items: center;
-        gap:12px;
 
         svg path {
             stroke: black;
-            stroke-width: 2;
+            stroke-width: 2px;
+        }
+
+        @media (min-width:$wide-cutoff) {
+            gap: 12px;
+
+            svg.hamburger-icon {
+                width:20px;
+                height:auto;
+            }
+
+            svg.search-icon {
+                width:15px;
+                height:auto;
+            }
+        }
+
+        @media (max-width:$wide-cutoff) {
+            gap: 1.5vh;
+
+            svg.hamburger-icon {
+                width:2.5vh;
+                height:auto;
+            }
+
+            svg.search-icon {
+                width:1.75vh;
+                height:auto;
+            }
         }
     }
 
@@ -72,13 +100,18 @@ a {
                 font-style: italic;
             }
         }
+
+        @media (max-width:$wide-cutoff) {
+            display: none;
+        }
     }
 }
 
 .center-nav {
     display: flex;
     flex-direction: column;
-    padding:13px;
+    padding:13px 0;
+    justify-content: center;
 
     .navlink-wrapper {
         display: flex;
@@ -91,6 +124,10 @@ a {
             font-weight: 300;
             font-size: 1em;
         }
+
+        @media (max-width:$wide-cutoff) {
+            display: none;
+        }
     }
 
     .title-wrapper {
@@ -101,12 +138,27 @@ a {
 
     a.title {
         font-family: 'Lment';
-        font-size: 3.5em;
-        margin-bottom: -0.6em;
+
+        @media (min-width:$wide-cutoff) {
+            font-size: 3.5em;
+            margin-bottom: -0.6em;
+        }
+
+        @media (max-width:$wide-cutoff) {
+            font-size: 4vh;
+            margin-bottom: -2.4vh;
+        }
     }
 
     a.subtitle {
         font-family: 'vg5000';
-        font-size:1.3em;
+
+        @media (min-width:$wide-cutoff) {
+            font-size: 1.3em;
+        }
+
+        @media (max-width:$wide-cutoff) {
+            font-size: 1.6vh;
+        }
     }
 }

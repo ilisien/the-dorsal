@@ -19,11 +19,13 @@ a {
   border-bottom: 1px;
   border-color: black;
   border-bottom-style: solid;
+  min-height: 10vh;
 }
 
 .nav-wrapper svg.negative-fin {
   position: absolute;
   z-index: -1000;
+  height: 80%;
 }
 
 .nav-wrapper svg.negative-fin .right-stop {
@@ -35,25 +37,49 @@ a {
 }
 
 .left-nav {
-  /*position: absolute;
-    left:13px;
-    bottom:13px;*/
   display: flex;
   flex-direction: column;
   margin-right: auto;
-  padding: 20px 13px 13px 13px;
+  padding: 20px 0 13px 13px;
   justify-content: space-between;
 }
 
 .left-nav .menu-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
 .left-nav .menu-wrapper svg path {
   stroke: black;
-  stroke-width: 2;
+  stroke-width: 2px;
+}
+
+@media (min-width: 1132px) {
+  .left-nav .menu-wrapper {
+    gap: 12px;
+  }
+  .left-nav .menu-wrapper svg.hamburger-icon {
+    width: 20px;
+    height: auto;
+  }
+  .left-nav .menu-wrapper svg.search-icon {
+    width: 15px;
+    height: auto;
+  }
+}
+
+@media (max-width: 1132px) {
+  .left-nav .menu-wrapper {
+    gap: 1.5vh;
+  }
+  .left-nav .menu-wrapper svg.hamburger-icon {
+    width: 2.5vh;
+    height: auto;
+  }
+  .left-nav .menu-wrapper svg.search-icon {
+    width: 1.75vh;
+    height: auto;
+  }
 }
 
 .left-nav .datetime-info {
@@ -75,10 +101,17 @@ a {
   font-style: italic;
 }
 
+@media (max-width: 1132px) {
+  .left-nav .datetime-info {
+    display: none;
+  }
+}
+
 .center-nav {
   display: flex;
   flex-direction: column;
-  padding: 13px;
+  padding: 13px 0;
+  justify-content: center;
 }
 
 .center-nav .navlink-wrapper {
@@ -94,6 +127,12 @@ a {
   font-size: 1em;
 }
 
+@media (max-width: 1132px) {
+  .center-nav .navlink-wrapper {
+    display: none;
+  }
+}
+
 .center-nav .title-wrapper {
   display: flex;
   align-items: center;
@@ -102,11 +141,34 @@ a {
 
 .center-nav a.title {
   font-family: 'Lment';
-  font-size: 3.5em;
-  margin-bottom: -0.6em;
+}
+
+@media (min-width: 1132px) {
+  .center-nav a.title {
+    font-size: 3.5em;
+    margin-bottom: -0.6em;
+  }
+}
+
+@media (max-width: 1132px) {
+  .center-nav a.title {
+    font-size: 4vh;
+    margin-bottom: -2.4vh;
+  }
 }
 
 .center-nav a.subtitle {
   font-family: 'vg5000';
-  font-size: 1.3em;
+}
+
+@media (min-width: 1132px) {
+  .center-nav a.subtitle {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 1132px) {
+  .center-nav a.subtitle {
+    font-size: 1.6vh;
+  }
 }
