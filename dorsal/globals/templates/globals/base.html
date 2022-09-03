@@ -37,7 +37,7 @@
                 </div>
                 <div class="title-wrapper">
                     <a class="title" href="{% url 'home' %}">the dorsal</a>
-                    <a class="subtitle" href="{% url 'about' %}">pittsburgh scitech's student-run news site</a>
+                    <a class="subtitle" href="{% url 'about' %}">pittsburgh scitech's student-run newspaper</a>
                 </div>
             </div>
         </div>
@@ -48,31 +48,39 @@
 
         {% block footer %}
         <div class="footer-wrapper">
-            <div class="title-box">
-                <a href="/home/" class="footer-title">the dorsal</a>
+            <div class="footer-top">
+                <div class="title-box">
+                    <a href="/home/" class="footer-title">the dorsal</a>
+                    <span class="subtitle">-- witty slogan here --</span>
+                </div>
+                <div class="infos">
+                    <ul class="about">
+                        <li class="title">information</li>
+                        <li><a href="">about</a></li>
+                        <li><a href="">staff</a></li>
+                        <li><a href="">contact</a></li>
+                        <li><a href="">open source</a></li>
+                    </ul>
+                    <ul class="support">
+                        <li class="title">support</li>
+                        <li><a href="">apply</a></li>
+                        <li><a href="">subscribe</a></li>
+                        <li><a href="">merchandise</a></li>
+                    </ul>
+                    <ul class="get">
+                        <li class="title">get the dorsal</li>
+                        <li><a href="">physical newsletter</a></li>
+                        <li><a href="">dorsal for classrooms</a></li>
+                        <li><a href="">video</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="infos">
-                <ul class="about">
-                    <li class="title">about</li>
-                    <li><a href="">why we exist</a></li>
-                    <li><a href="">staff</a></li>
-                    <li><a href="">contact</a></li>
-                    <li><a href="">open source</a></li>
-                </ul>
-                <ul class="support">
-                    <li class="title">support</li>
-                    <li><a href="">positions</a></li>
-                    <li><a href="">donate</a></li>
-                    <li><a href="">subscribe</a></li>
-                </ul>
-                <ul class="get">
-                    <li class="title">get the dorsal</li>
-                    <li><a href="">real paper</a></li>
-                    <li><a href="">for classrooms</a></li>
-                    <li><a href="">video</a></li>
-                    <li><a href="">audio</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <span class="ownership-info">All website code is licensed under the <a href="https://choosealicense.com/licenses/mit/">MIT License</a> and open sourced <a href="https://github.com/ilisien/the-dorsal">here</a>.</span>
+                <span class="credit">Images are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</span>
+                <span class="credit">Articles are copyrighted 2022 by their respective authors.</span>
             </div>
+
         </div>
         {% endblock footer %}
     </body>

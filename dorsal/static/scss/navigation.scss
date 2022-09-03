@@ -9,7 +9,8 @@ a {
     color:black;
 }
 
-$wide-cutoff: 1132px;
+$navbar-cutoff: 1132px;
+$footer-cutoff: 1000px;
 
 .nav-wrapper {
     background-color: white;
@@ -55,7 +56,7 @@ $wide-cutoff: 1132px;
             stroke-width: 2px;
         }
 
-        @media (min-width:$wide-cutoff) {
+        @media (min-width:$navbar-cutoff) {
             gap: 12px;
 
             svg.hamburger-icon {
@@ -69,7 +70,7 @@ $wide-cutoff: 1132px;
             }
         }
 
-        @media (max-width:$wide-cutoff) {
+        @media (max-width:$navbar-cutoff) {
             gap: 1.5vh;
 
             svg.hamburger-icon {
@@ -102,7 +103,7 @@ $wide-cutoff: 1132px;
             }
         }
 
-        @media (max-width:$wide-cutoff) {
+        @media (max-width:$navbar-cutoff) {
             display: none;
         }
     }
@@ -126,7 +127,7 @@ $wide-cutoff: 1132px;
             font-size: 1em;
         }
 
-        @media (max-width:$wide-cutoff) {
+        @media (max-width:$navbar-cutoff) {
             display: none;
         }
     }
@@ -140,12 +141,12 @@ $wide-cutoff: 1132px;
     a.title {
         font-family: 'Lment';
 
-        @media (min-width:$wide-cutoff) {
+        @media (min-width:$navbar-cutoff) {
             font-size: 3.5em;
             margin-bottom: -0.6em;
         }
 
-        @media (max-width:$wide-cutoff) {
+        @media (max-width:$navbar-cutoff) {
             font-size: 4vh;
             margin-bottom: -2.4vh;
         }
@@ -154,11 +155,11 @@ $wide-cutoff: 1132px;
     a.subtitle {
         font-family: 'vg5000';
 
-        @media (min-width:$wide-cutoff) {
+        @media (min-width:$navbar-cutoff) {
             font-size: 1.3em;
         }
 
-        @media (max-width:$wide-cutoff) {
+        @media (max-width:$navbar-cutoff) {
             font-size: 1.6vh;
         }
     }
@@ -178,33 +179,53 @@ $footer-color-2: #8998cb;
     width: 100%;
     min-height: 20vh;
     bottom:0;
-    background: linear-gradient(90deg,$footer-color-1,$footer-color-2);
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+}
+
+.footer-top {
+    background: linear-gradient(to right,$footer-color-1,$footer-color-2);
+    display: flex;
+    justify-content:space-evenly;
     align-items: center;
 
+    @media (max-width:$navbar-cutoff) {
+        flex-direction: column;
+        font-size: 1.5em;
+    }
+
     .title-box {
-        padding:2.5em 0.7em 0.7em 0.7em;
-        
+        padding:0.7em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         a.footer-title {
-            font-family: "Lment";
-            font-size: 3.5em;
+            font-family: "VG5000";
+            font-size: 4.5em;
+            color:white;
+        }
+
+        span.subtitle {
+            font-family: "Roboto";
             color:white;
         }
     }
 
     .infos {
         display: flex;
-        gap: 12ch;
-        padding:0.7em;
+        gap: 7vw;
+        padding:5vw;
         ul {
             list-style: none;
 
             li.title {
                 color: white;
-                font-family: "VG5000";
+                font-family: "Roboto";
+                font-weight: 500;
                 font-size: 1.50em;
                 margin-bottom:0.3em;
+                font-style: italic;
             }
             
             li:not(.title) a {
@@ -212,7 +233,35 @@ $footer-color-2: #8998cb;
                 font-family: 'Roboto';
                 font-weight: 300;
                 font-size: 1em;
+                line-height: 1.5em;
             }
         }
+    }
+
+}
+
+.footer-bottom {
+    background-color: #333333;
+    min-height: 7vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    @media (max-width:$footer-cutoff) {
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.3vh;
+    }
+
+
+    span {
+        color:white;
+        font-family: "Roboto";
+        font-size: 0.8em;
+    }
+
+    a {
+        color:white;
+        font-style:italic;
     }
 }
