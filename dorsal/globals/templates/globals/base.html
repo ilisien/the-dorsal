@@ -38,6 +38,7 @@
                 <div class="title-wrapper">
                     <a class="title" href="{% url 'home' %}">the dorsal</a>
                     <a class="subtitle" href="{% url 'about' %}">pittsburgh scitech's student-run news site</a>
+                </div>
             </div>
         </div>
         {% endblock navbar %}
@@ -46,6 +47,33 @@
         {% endblock content %}
 
         {% block footer %}
+        <div class="footer-wrapper">
+            <div class="title-box">
+                <a href="/home/" class="footer-title">the dorsal</a>
+            </div>
+            <div class="infos">
+                <ul class="about">
+                    <li class="title">about</li>
+                    <li><a href="">why we exist</a></li>
+                    <li><a href="">staff</a></li>
+                    <li><a href="">contact</a></li>
+                    <li><a href="">open source</a></li>
+                </ul>
+                <ul class="support">
+                    <li class="title">support</li>
+                    <li><a href="">positions</a></li>
+                    <li><a href="">donate</a></li>
+                    <li><a href="">subscribe</a></li>
+                </ul>
+                <ul class="get">
+                    <li class="title">get the dorsal</li>
+                    <li><a href="">real paper</a></li>
+                    <li><a href="">for classrooms</a></li>
+                    <li><a href="">video</a></li>
+                    <li><a href="">audio</a></li>
+                </ul>
+            </div>
+        </div>
         {% endblock footer %}
     </body>
 </html>

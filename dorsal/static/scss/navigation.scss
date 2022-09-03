@@ -12,6 +12,7 @@ a {
 $wide-cutoff: 1132px;
 
 .nav-wrapper {
+    background-color: white;
     position: fixed;
     top: 0;
     width:100%;
@@ -159,6 +160,59 @@ $wide-cutoff: 1132px;
 
         @media (max-width:$wide-cutoff) {
             font-size: 1.6vh;
+        }
+    }
+}
+
+/*
+#8998cb
+#8c69a7
+*/
+
+
+$footer-color-1: #8c69a7;
+$footer-color-2: #8998cb;
+
+.footer-wrapper {
+    position: absolute;
+    width: 100%;
+    min-height: 20vh;
+    bottom:0;
+    background: linear-gradient(90deg,$footer-color-1,$footer-color-2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .title-box {
+        padding:2.5em 0.7em 0.7em 0.7em;
+        
+        a.footer-title {
+            font-family: "Lment";
+            font-size: 3.5em;
+            color:white;
+        }
+    }
+
+    .infos {
+        display: flex;
+        gap: 12ch;
+        padding:0.7em;
+        ul {
+            list-style: none;
+
+            li.title {
+                color: white;
+                font-family: "VG5000";
+                font-size: 1.50em;
+                margin-bottom:0.3em;
+            }
+            
+            li:not(.title) a {
+                color:white;
+                font-family: 'Roboto';
+                font-weight: 300;
+                font-size: 1em;
+            }
         }
     }
 }
