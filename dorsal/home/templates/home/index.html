@@ -1,1 +1,16 @@
 {% extends 'globals/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="main-wrapper">
+    <div class="section-listing"></div>
+    <div class="headline-columns-wrapper">
+        <div class="headline-col1"></div>
+        <div class="headline-col2"></div>
+    </div>
+</div>
+{% endblock content %}

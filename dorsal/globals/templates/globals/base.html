@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
         <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+        {% block extra_css %}{% endblock extra_css %}
         <title>{% block title %}the dorsal{% endblock title %}</title>
     </head>
     <body>
