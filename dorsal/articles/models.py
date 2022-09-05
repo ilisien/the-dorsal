@@ -5,6 +5,8 @@ from wagtail.fields import RichTextField
 from wagtail.contrib.modeladmin.options import ModelAdmin
 from wagtail.admin.panels import FieldPanel, FieldRowPanel
 
+from staff.models import Profile
+
 class Article(models.Model):
 
     class Section(models.TextChoices):
@@ -22,7 +24,7 @@ class Article(models.Model):
         HIGH = 2, "high"
         HIGHEST = 3, "highest"
 
-    author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True, blank=True)
+    author = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True)
 
     # article stuff
     section = models.CharField(max_length=3, choices=Section.choices, default=Section.UNASSIGNED)
@@ -46,3 +48,4 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+

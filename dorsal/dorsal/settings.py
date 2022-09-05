@@ -35,6 +35,7 @@ with open(os.path.join(BASE_DIR,"dorsal/allowed_hosts.txt")) as hosts_file:
 # Application definition
 
 INSTALLED_APPS = [
+    'images',
     'globals',
     'home',
     'articles',
@@ -182,3 +183,4 @@ WAGTAILADMIN_BASE_URL = ''
 # Reverse the default case-sensitive handling of tags
 TAGGIT_CASE_INSENSITIVE = True
 
+WAGTAILIMAGES_IMAGE_MODEL = 'images.InfoImage'

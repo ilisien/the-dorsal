@@ -17,3 +17,6 @@ class Profile(models.Model):
     grade = models.IntegerField(blank=True,null=True)
     pronouns = models.CharField(max_length=15,blank=True,null=True)
     bio = models.TextField(blank=True,null=True)
+
+    def __str__(self):
+        return f"{self.user.first_name} {self.user.last_name}"
