@@ -17,9 +17,10 @@ class Periods:
     PER6 = "6th Period"
 
 class Schedules:
-    REGULAR = 0
-    WEDNESDAY = 1
-    DELAYED = 2
+    WEEKEND = 0
+    REGULAR = 1
+    WEDNESDAY = 2
+    DELAYED = 3
 
 Nav = namedtuple("Nav",("str","path"))
 
@@ -29,59 +30,62 @@ def get_period(datetime,schedule=None):
     if schedule == None:
         if timezone.localtime(datetime).weekday() == 2:
             schedule = Schedules.WEDNESDAY
+        elif timezone.localtime(datetime).weekday() in [5,6]:
+            schedule = Schedules.WEEKEND
+            period = Periods.NO_SCHOOL
         else:
             schedule = Schedules.REGULAR
 
     if schedule == Schedules.REGULAR:
-        if '06:50' >= time and time > '07:10':
+        if '06:50' <= time and time < '07:10':
             period = Periods.BREAKFAST
-        elif '07:10' >= time and time > '07:18':
+        elif '07:10' <= time and time < '07:18':
             period = Periods.PER1
-        elif '07:18' >= time and time > '08:38':
+        elif '07:18' <= time and time < '08:38':
             period = Periods.PER2
-        elif '08:38' >= time and time > '10:03':
+        elif '08:38' <= time and time < '10:03':
             period = Periods.PER3
-        elif '10:03' >= time and time > '11:25':
+        elif '10:03' <= time and time < '11:25':
             period = Periods.PER4
-        elif '11:25' >= time and time > '12:50':
+        elif '11:25' <= time and time < '12:50':
             period = Periods.PER5
-        elif '12:50' >= time and time > '14:15':
+        elif '12:50' <= time and time < '14:15':
             period = Periods.PER6
         else:
             period = Periods.NO_SCHOOL
 
     elif schedule == Schedules.WEDNESDAY:
-        if '06:50' >= time and time > '07:10':
+        if '06:50' <= time and time < '07:10':
             period = Periods.BREAKFAST
-        elif '07:10' >= time and time > '07:18':
+        elif '07:10' <= time and time < '07:18':
             period = Periods.PER1
-        elif '07:18' >= time and time > '08:21':
+        elif '07:18' <= time and time < '08:21':
             period = Periods.PER2
-        elif '08:21' >= time and time > '09:29':
+        elif '08:21' <= time and time < '09:29':
             period = Periods.PER3
-        elif '09:29' >= time and time > '10:37':
+        elif '09:29' <= time and time < '10:37':
             period = Periods.PER5
-        elif '10:37' >= time and time > '12:08':
+        elif '10:37' <= time and time < '12:08':
             period = Periods.WPER4
-        elif '12:08' >= time and time > '13:15':
+        elif '12:08' <= time and time < '13:15':
             period = Periods.PER6
         else:
             period = Periods.NO_SCHOOL
 
     elif schedule == Schedules.DELAYED:
-        if '08:50' >= time and time > '09:10':
+        if '08:50' <= time and time < '09:10':
             period = Periods.BREAKFAST
-        elif '09:10' >= time and time > '09:18':
+        elif '09:10' <= time and time < '09:18':
             period = Periods.PER1
-        elif '09:18' >= time and time > '10:08':
+        elif '09:18' <= time and time < '10:08':
             period = Periods.PER2
-        elif '10:08' >= time and time > '11:03':
+        elif '10:08' <= time and time < '11:03':
             period = Periods.PER3
-        elif '11:03' >= time and time > '12:25':
+        elif '11:03' <= time and time < '12:25':
             period = Periods.PER4
-        elif '12:25' >= time and time > '13:20':
+        elif '12:25' <= time and time < '13:20':
             period = Periods.PER5
-        elif '13:20' >= time and time > '14:15':
+        elif '13:20' <= time and time < '14:15':
             period = Periods.PER6
         else:
             period = Periods.NO_SCHOOL
