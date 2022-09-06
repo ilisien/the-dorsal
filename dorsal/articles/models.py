@@ -6,6 +6,7 @@ from wagtail.contrib.modeladmin.options import ModelAdmin
 from wagtail.admin.panels import FieldPanel, FieldRowPanel
 
 from staff.models import Profile
+from images.models import InfoImage
 
 class Article(models.Model):
 
@@ -29,7 +30,8 @@ class Article(models.Model):
     # article stuff
     section = models.CharField(max_length=3, choices=Section.choices, default=Section.UNASSIGNED)
     title = models.CharField(max_length=100)
-    prologue = RichTextField(blank=True)
+    title_image = models.ForeignKey(InfoImage, on_delete=models.SET_NULL, null=True, blank=True)
+    prologue = models.TextField(blank=True)
     content = RichTextField(blank=True)
 
     # for author to change when done writing
@@ -48,4 +50,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_truncated_prologue(self):
+        return self.prologue[:150]
 

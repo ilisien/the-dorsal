@@ -1,10 +1,13 @@
+@import 'colors';
+
 * {
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
+	color: $black;
 }
 
 a {
     text-decoration: none;
-    color:black;
+    color: $black;
 }

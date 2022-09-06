@@ -1,0 +1,22 @@
+.colored-link {
+    position: relative;
+}
+
+.colored-link:after {
+    content: '';
+    z-index: -100;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    opacity: 100%;
+    bottom: 0;
+    left:0;
+    background: linear-gradient(to right,$link-grad-1, $link-grad-2);
+    transition: opacity 0.5s, height 0.5s;
+}
+
+.colored-link:hover:after {
+    height: 0.5em;
+    opacity: 50%;
+    transition: opacity 0.5s, height 0.5s;
+}

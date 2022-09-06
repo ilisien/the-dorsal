@@ -35,6 +35,7 @@ readonly_panels = [
 author_panels = [
     FieldPanel("section"),
     FieldPanel("title"),
+    FieldPanel("title_image"),
     FieldPanel("prologue"),
     FieldPanel("content"),
     FieldRowPanel([
@@ -56,6 +57,7 @@ editor_panels = [
     ReadOnlyPanel("author"),
     FieldPanel("section"),
     FieldPanel("title"),
+    FieldPanel("title_image"),
     FieldPanel("prologue"),
     FieldPanel("content"),
     FieldRowPanel([
@@ -77,6 +79,7 @@ superuser_panels = [
     FieldPanel("author"),
     FieldPanel("section"),
     FieldPanel("title"),
+    FieldPanel("title_image"),
     FieldPanel("prologue"),
     FieldPanel("content"),
     FieldRowPanel([

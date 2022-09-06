@@ -1,16 +1,34 @@
 {% extends 'globals/base.html' %}
 {% load static %}
+{% load wagtailimages_tags %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/test.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_index.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
 <div class="main-wrapper">
     <div class="section-listing"></div>
     <div class="headline-columns-wrapper">
-        <div class="headline-col1"></div>
-        <div class="headline-col2"></div>
+        <div class="empty col2"></div>
+    {% for article in recent_articles %}
+        {% if not forloop.counter|divisibleby:2 %}
+        <div class="article-box col1">
+        {% else %}
+        <div class="article-box col2">
+        {% endif %}
+            {% image article.title_image original as title_image %}
+            <a href=""><img src="{{ title_image.url }}" class="title-image"></a>
+            <div class="headline-wrapper">
+                <a href="" class="headline colored-link">{{ article.title }}</a>
+                <span class="author-datetime-box">
+                    <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                    <span class="datetime">{{ article.pub_date|date:"N jS, 'y, P" }}</span>
+                </span>
+            </div>
+            <span class="summary">{{ article.get_truncated_prologue }}...</span>
+        </div>
+    {% endfor %}
     </div>
 </div>
 {% endblock content %}

@@ -1,5 +1,73 @@
 @import 'initial';
+@import 'colored_links';
 
 .main-wrapper {
-    
+    margin-top:150px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-left: 10vw;
+    margin-right:10vw;
+
+    .section-listing {
+        content: "hi";
+    }
+
+    .headline-columns-wrapper {
+        padding:5vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: dense;
+        gap:2.5vw;
+
+        .col1 {
+            grid-column: 1;
+        }
+
+        .col2 {
+            grid-column: 2;
+        }
+
+        .empty {
+            height: 15vh;
+            width: 100%;
+            grid-row: span 1;
+        }
+
+        .article-box {
+            grid-row:span 2;
+
+            img {
+                width:100%;
+                height:auto;
+            }
+
+            .headline-wrapper {
+                a.headline {
+                    font-family: "Roboto";
+                    font-style:italic;
+                    font-size:1.75em;
+                }
+                
+                span.author-datetime-box {
+                    display:flex;
+                    gap:3ch;
+
+                    a.author {
+                        font-family: "Piazzolla";
+                        font-style:italic;
+                    }
+
+                    span.datetime {
+                        font-family: "Piazzolla";
+                    }
+                }
+            }
+
+            span.summary {
+                font-family: "Roboto Serif";
+                font-weight: 300;
+                font-style:italic;
+            }
+        }
+    }
 }

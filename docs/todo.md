@@ -2,3 +2,4 @@
 - [ ] make ui wagtail themed, user friendly for ReadOnlyPanel in articles.edit_handlers
 - [ ] make article createview modeladmin update the Article model with the current user as author field
 - [ ] make editing of pages into a group task (https://docs.wagtail.org/en/stable/extending/custom_tasks.html)
+- [ ] make readonlypanels possible for images
