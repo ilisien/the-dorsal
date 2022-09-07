@@ -11,7 +11,6 @@
     .by-section-wrapper {
         width: 100%;
         height: 100%;
-        padding-right: 2.5vw;
         display: flex;
         flex-direction: column;
         gap:0.5em;
@@ -30,7 +29,6 @@
             display:flex;
             flex-direction: column;
             padding-left:1ch;
-            font-size: 0.8em;
 
             a.headline {
                 font-family: "Roboto";
@@ -42,7 +40,9 @@
                 display: flex;
                 gap:1ch;
 
-
+                a.author {
+                    font-style: italic;
+                }
             }
 
             span.summary {
@@ -53,7 +53,7 @@
     }
 
     .headline-columns-wrapper {
-        padding:5vw 5vw 5vw 5vw;
+        padding:0 5vw;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-auto-flow: dense;
