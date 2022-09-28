@@ -2,9 +2,15 @@
 @import 'colored_links';
 
 .main-wrapper {
-    margin-top:150px;
+    margin-top:calc(15vh + 50px);
     display: grid;
     grid-template-columns: 1fr 4fr;
+
+    @media (max-width:1650px) {
+        margin-top:calc(15vh);
+        grid-template-columns: 1fr;
+        font-size: 1.5vh;       
+    }
     margin-left: 5vw;
     margin-right:5vw;
 
@@ -15,10 +21,22 @@
         flex-direction: column;
         gap:0.5em;
 
+        span.by-section-title {
+            font-family: "Roboto";
+            font-style: italic;
+            font-size: 1.5em;
+        }
+
         span.section-title {
             font-family: "VG5000";
             font-size: 1.5em;
         }
+
+        span.oops {
+            font-family: "Roboto";
+
+        }
+
         ul {
             list-style:none;
             padding-bottom:20px;
@@ -29,6 +47,7 @@
             display:flex;
             flex-direction: column;
             padding-left:1ch;
+            gap:2px;
 
             a.headline {
                 font-family: "Roboto";
@@ -49,6 +68,24 @@
                 font-family: "Roboto Serif";
                 font-size: 0.8em;
             }
+        }
+
+        @media (max-width:1650px) {
+            display: none;            
+        }
+    }
+
+    .column-bar {
+        .column-header {
+            span.column-title {
+                font-family: "Roboto";
+                font-style: italic;
+                font-size: 1.5em;
+            }
+            padding:0 5vw 2.5vw 5vw;
+        }
+        .column-footer {
+            padding:5vw 5vw 5vw 5vw;
         }
     }
 
@@ -73,6 +110,23 @@
             grid-row: span 1;
         }
 
+        @media (max-aspect-ratio: 3/4) {
+            grid-template-columns: 1fr;
+            gap:3.5vh;
+
+            .col1 {
+                grid-column: 1;
+            }
+    
+            .col2 {
+                grid-column: 1;
+            }
+
+            .empty {
+                display: none;
+            }
+        }
+
         .article-box {
             grid-row:span 2;
 
@@ -84,6 +138,7 @@
             .headline-wrapper {
                 a.headline {
                     font-family: "Roboto";
+                    font-weight: 700;
                     font-size:1.75em;
                 }
                 
