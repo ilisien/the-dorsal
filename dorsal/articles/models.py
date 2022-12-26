@@ -8,6 +8,9 @@ from wagtail.admin.panels import FieldPanel, FieldRowPanel
 from staff.models import Profile
 from images.models import InfoImage
 
+def urlencode(string):
+    return string.replace(" ","_").replace(".","").replace(",","").replace("'","").replace('"',"").lower()
+
 class Article(models.Model):
 
     class Section(models.TextChoices):
@@ -25,11 +28,13 @@ class Article(models.Model):
         HIGH = 2, "high"
         HIGHEST = 3, "highest"
 
+
     author = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True)
 
     # article stuff
     section = models.CharField(max_length=3, choices=Section.choices, default=Section.UNASSIGNED)
     title = models.CharField(max_length=100)
+    url_encoded_title = models.CharField(max_length=200,null=True)
     title_image = models.ForeignKey(InfoImage, on_delete=models.SET_NULL, null=True, blank=True)
     prologue = models.TextField(blank=True)
     content = RichTextField(blank=True)
@@ -53,4 +58,10 @@ class Article(models.Model):
 
     def get_truncated_prologue(self):
         return self.prologue[:150]
-
+    
+    def get_url_encoded_title(self):
+        return urlencode(self.title)
+    
+    def save(self, *args, **kwargs):
+        self.url_encoded_title = self.get_url_encoded_title()
+        super(Article, self).save(*args, **kwargs)

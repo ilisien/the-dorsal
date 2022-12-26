@@ -6,7 +6,7 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
 
-    @media (max-width:1650px) {
+    @media (max-width:1250px) {
         margin-top:calc(15vh);
         grid-template-columns: 1fr;
         font-size: 1.5vh;       
@@ -40,7 +40,10 @@
         ul {
             list-style:none;
             padding-bottom:20px;
+        }
 
+        li:not(:first-child) {
+            margin-top:20px;
         }
 
         .by-section-article {
@@ -50,7 +53,8 @@
             gap:2px;
 
             a.headline {
-                font-family: "Roboto";
+                font-family: "Roboto Serif";
+                font-style:italic;
                 font-size: 1.25em;
             }
 
@@ -70,7 +74,7 @@
             }
         }
 
-        @media (max-width:1650px) {
+        @media (max-width:1250px) {
             display: none;            
         }
     }
@@ -137,9 +141,9 @@
 
             .headline-wrapper {
                 a.headline {
-                    font-family: "Roboto";
-                    font-weight: 700;
-                    font-size:1.75em;
+                    font-family: "Roboto Serif";
+                    font-style: italic;
+                    font-size: 1.75em;
                 }
                 
                 span.author-datetime-box {

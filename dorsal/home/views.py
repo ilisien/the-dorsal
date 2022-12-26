@@ -26,7 +26,7 @@ def index(request):
         'recent_articles':recent_articles,
     }
     context.update(get_global_context())
-    print(str(context))
+    #print(str(context))
     return render(request,'home/index.html', context)
 
 def contact(request):

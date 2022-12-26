@@ -12,6 +12,8 @@ from wagtail.documents import urls as wagtaildocs_urls
 from home import urls as home_urls
 from home.views import redirect_to_home
 
+from articles import urls as article_urls
+
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
@@ -19,7 +21,8 @@ urlpatterns = [
     path('documents/', include(wagtaildocs_urls)),
 
     path("",redirect_to_home),
-    path("home/",include(home_urls),name='home')
+    path("home/",include(home_urls),name='home'),
+    path("article/",include(article_urls),name='articles')
 ]
 
 

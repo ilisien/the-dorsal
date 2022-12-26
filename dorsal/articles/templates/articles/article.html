@@ -1,0 +1,38 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+{% load wagtailimages_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/articles_article.css' %}">
+{% endblock extra_css %}
+
+{% block navbar %}
+<div class="title-wrapper">
+<a class="the-dorsal-title" href="{% url 'home' %}">the dorsal</a>
+</div>
+{% endblock navbar %}
+
+{% block content %}
+<div class="main-wrapper">
+
+    {% image article.title_image original as title_image %}
+    <img src="{{ title_image.url }}" class="title-image">
+
+    <div class="left-column">
+
+    </div>
+    <div class="center-column">
+
+        <div class="titlebox">
+            <span class="headline">{{ article.title }}</span>
+            <div class="infobox">
+                <a class="author">by <span class="colored-link">{{ article.author.user.first_name }} {{ article.author.user.last_name }}</span></a>
+                <span class="datetime">{{ article.pub_date|date:"N jS, 'y, P" }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="right-column">
+
+    </div>
+</div>
+{% endblock content %}
