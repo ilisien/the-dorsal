@@ -1,6 +1,7 @@
 {% extends 'globals/base.html' %}
 {% load static %}
 {% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/articles_article.css' %}">
@@ -23,11 +24,29 @@
     </div>
     <div class="center-column">
 
-        <div class="titlebox">
+        <div class="title-box">
             <span class="headline">{{ article.title }}</span>
             <div class="infobox">
                 <a class="author">by <span class="colored-link">{{ article.author.user.first_name }} {{ article.author.user.last_name }}</span></a>
                 <span class="datetime">{{ article.pub_date|date:"N jS, 'y, P" }}</span>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <div class="summary-wrapper">
+                <p class="summary">{{ article.prologue }}</p>
+            </div>
+            
+            <div class="article-wrapper">
+                {{ article.content|richtext }}
+            </div>
+
+            <div class="about-the-author">
+            
+            </div>
+
+            <div class="other-articles">
+            
             </div>
         </div>
     </div>

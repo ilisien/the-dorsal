@@ -35,6 +35,10 @@
         display: flex;
         flex-direction: column;
 
+        .title-box {
+            margin: 20px 0;
+        }
+
         span.headline {
             font-family: "Roboto Serif";
             font-style: italic;
@@ -54,6 +58,42 @@
             span.datetime {
                 font-family: "Piazzolla";
                 font-size:1.25em;
+            }
+        }
+
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            gap:2em;
+
+            .summary-wrapper {
+                p.summary {
+                    font-family: "Roboto Serif";
+                    font-style: italic;
+                    font-size: 1em;
+                    line-height: 1.75em;
+                    text-indent: 5ch;
+                }
+            }
+
+            .article-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap:2em;
+
+                p {
+                    font-family: "Roboto Serif";
+                    font-size: 1em;
+                    line-height: 1.75em;
+                }
+            }
+
+            .about-the-author {
+
+            }
+
+            .other-articles {
+                
             }
         }
 
