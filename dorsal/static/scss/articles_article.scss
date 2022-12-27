@@ -10,7 +10,7 @@
         font-family: 'Lment';
         font-size: 3.5em;
         top:35px;
-        background: -webkit-linear-gradient(0deg,$light-purple,$peach);
+        background: -webkit-linear-gradient(0deg,$primary,$secondary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -34,6 +34,7 @@
         width:100%;
         display: flex;
         flex-direction: column;
+        margin-bottom: 4em;
 
         .title-box {
             margin: 20px 0;
@@ -65,6 +66,7 @@
             display: flex;
             flex-direction: column;
             gap:2em;
+            align-items: center;
 
             .summary-wrapper {
                 p.summary {
@@ -73,6 +75,8 @@
                     font-size: 1em;
                     line-height: 1.75em;
                     text-indent: 5ch;
+                    text-align-last: left;
+                    text-align: justify;
                 }
             }
 
@@ -80,20 +84,59 @@
                 display: flex;
                 flex-direction: column;
                 gap:2em;
+                align-items: center;
 
                 p {
                     font-family: "Roboto Serif";
                     font-size: 1em;
                     line-height: 1.75em;
+                    text-align-last: left;
+                    text-align: justify;
+                }
+
+                img {
+                    width:125%;
+                    height:auto;
+                }
+            }
+            .endinfo {
+                display:flex;
+                gap:8em;
+                margin: 4em 0;
+                align-items: center;
+                flex-direction: column;
+
+                .about-the-author {
+                    background: linear-gradient(90deg,$primary,$secondary);
+                    padding:2em;
+                    border-radius: 1em;
+                    display: flex;
+                    gap:1em;
+                    flex-direction: column;
+                    width:75%;
+                    
+                    span.name {
+                        font-family: "VG5000";
+                        color: white;
+                        font-size: 2em;
+    
+                    }
+    
+                    span.grade {
+                        font-family: "Piazzolla";
+                        color: white;
+                    }
+    
+                    p.bio {
+                        color: white;
+                        font-family: "Roboto Serif";
+                        font-size:1.3em;
+                    }
                 }
             }
 
-            .about-the-author {
-
-            }
-
             .other-articles {
-                
+
             }
         }
 

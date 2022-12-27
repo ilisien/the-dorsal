@@ -41,12 +41,15 @@
                 {{ article.content|richtext }}
             </div>
 
-            <div class="about-the-author">
-            
-            </div>
+            <div class="endinfo">
+                <a class="about-the-author" href="">
+                    <span class="name">By {{ article.author.user.first_name }} {{ article.author.user.last_name }} <span class="grade">in grade {{ article.author.grade }}</span></span>
+                    <p class="bio">{{ article.author.short_bio }}</p>
+                </a>
 
-            <div class="other-articles">
-            
+                <div class="other-articles">
+                
+                </div>
             </div>
         </div>
     </div>
