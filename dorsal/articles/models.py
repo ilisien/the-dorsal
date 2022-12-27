@@ -65,3 +65,5 @@ class Article(models.Model):
     def save(self, *args, **kwargs):
         self.url_encoded_title = self.get_url_encoded_title()
         super(Article, self).save(*args, **kwargs)
+
+published_articles = Article.objects.filter(published=True)

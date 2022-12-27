@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from articles.models import Article
+from articles.models import Article, published_articles
 import datetime
 from urllib.parse import unquote
 from globals import get_global_context
@@ -15,7 +15,12 @@ def article(request, article_id=None, year=None, month=None, day=None, article_t
         }        
     else:
         pass
-    context.update(get_global_context())
 
+    author_articles = published_articles.filter(author=article.author).exclude(id=article.id).order_by('-pub_date')[:5]
+    context["author_articles"] = author_articles
+
+    print(author_articles)
+
+    context.update(get_global_context())
 
     return render(request,'articles/article.html', context)
