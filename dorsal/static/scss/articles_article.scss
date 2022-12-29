@@ -93,10 +93,23 @@
                     text-align-last: left;
                     text-align: justify;
                 }
-
-                img {
+                
+                .image-box {
                     width:125%;
-                    height:auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap:5px;
+
+                    img {
+                        width:100%;
+                        height:auto;
+                    }
+
+                    span.image-caption {
+                        font-family: "Roboto";
+                        font-style: italic;
+                    }
                 }
             }
 
@@ -197,7 +210,7 @@
             
                     .article-box {
                         grid-row:span 2;
-            
+
                         img {
                             width:100%;
                             height:auto;
