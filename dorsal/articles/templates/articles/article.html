@@ -44,7 +44,7 @@
             <a href="/" class="go-back"><span class="colored-link">go back to home page</span></a>
 
             <div class="endinfo">
-                <a class="about-the-author" href="">
+                <a class="about-the-author" href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}">
                     <span class="name">By {{ article.author.user.first_name }} {{ article.author.user.last_name }} <span class="grade">in grade {{ article.author.grade }}</span></span>
                     <p class="bio">{{ article.author.short_bio }}</p>
                 </a>
