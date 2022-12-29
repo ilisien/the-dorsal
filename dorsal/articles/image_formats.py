@@ -18,7 +18,7 @@ class CaptionedImageFormat(Format):
         else:
             date_string = ""
 
-        return format_html('<div class="image-box">{}<span class="image-caption">{}<a href=""> taken by <span class="colored-link">{}</span></a>{}</span></div>', default_html, caption_string, image.photographer, date_string)
+        return format_html('<div class="image-box">{}<span class="image-caption">{}<a href="/staff/{}/"> taken by <span class="colored-link">{}</span></a>{}</span></div>', default_html, caption_string, f"{image.photographer.user.first_name.lower()}_{image.photographer.user.last_name.lower()}", image.photographer, date_string)
 
 
 register_image_format(

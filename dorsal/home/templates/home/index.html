@@ -17,7 +17,7 @@
             <li><div class="by-section-article">
                 <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
-                    <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                    <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
                 </span>
                 <span class="summary">{{ article.prologue|slice:75 }}...</span>
@@ -34,7 +34,7 @@
             <li><div class="by-section-article">
                 <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
-                    <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                    <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
                 </span>
                 <span class="summary">{{ article.prologue|slice:75 }}...</span>
@@ -51,7 +51,7 @@
             <li><div class="by-section-article">
                 <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
-                    <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                    <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
                 </span>
                 <span class="summary">{{ article.prologue|slice:75 }}...</span>
@@ -68,7 +68,7 @@
             <li><div class="by-section-article">
                 <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
-                    <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                    <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
                 </span>
                 <span class="summary">{{ article.prologue|slice:75 }}...</span>
@@ -85,7 +85,7 @@
             <li><div class="by-section-article">
                 <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
-                    <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                    <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
                 </span>
                 <span class="summary">{{ article.prologue|slice:75 }}...</span>
@@ -112,7 +112,7 @@
                     <div class="headline-wrapper">
                         <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                         <span class="author-datetime-box">
-                            <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                            <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                             <span class="datetime">{{ article.pub_date|date:"N jS, 'y, P" }}</span>
                         </span>
                     </div>

@@ -27,7 +27,7 @@
         <div class="title-box">
             <span class="headline">{{ article.title }}</span>
             <div class="infobox">
-                <a class="author">by <span class="colored-link">{{ article.author.user.first_name }} {{ article.author.user.last_name }}</span></a>
+                <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author.user.first_name }} {{ article.author.user.last_name }}</span></a>
                 <span class="datetime">{{ article.pub_date|date:"N jS, 'y, P" }}</span>
             </div>
         </div>
@@ -63,7 +63,7 @@
                                 <div class="headline-wrapper">
                                     <a href="{% url 'article'  year=author_article.pub_date.year month=author_article.pub_date.month day=author_article.pub_date.day article_title=author_article.url_encoded_title %}" class="headline">{{ author_article.title }}</a>
                                     <span class="author-datetime-box">
-                                        <a href="" class="author">by <span class="colored-link">{{ author_article.author }}</span></a>
+                                        <a href="{% url 'staff' first_name=author_article.author.user.first_name last_name=author_article.author.user.last_name %}" class="author">by <span class="colored-link">{{ author_article.author }}</span></a>
                                         <span class="datetime">{{ author_article.pub_date|date:"N jS, 'y, P" }}</span>
                                     </span>
                                 </div>

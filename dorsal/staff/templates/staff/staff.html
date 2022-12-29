@@ -1,0 +1,67 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/staff_staff.css' %}">
+{% endblock extra_css %}
+
+{% block navbar %}
+<div class="title-wrapper">
+<a class="the-dorsal-title" href="{% url 'home' %}">the dorsal</a>
+</div>
+{% endblock navbar %}
+
+{% block content %}
+<div class="main-wrapper">
+    <div class="staff-desc-box">
+        <div class="titles-box">
+            <span class="name">{{ staff_member.user.first_name }} {{ staff_member.user.last_name }}</span>
+            <span class="grade">
+            {% if staff_member.grade == 9 %}
+                Sci-Tech Freshman
+            {% elif staff_member.grade == 10 %}
+                Sci-Tech Sophomore
+            {% elif staff_member.grade == 11 %}
+                Sci-Tech Junior
+            {% elif staff_member.grade == 12 %}
+                Sci-Tech Senior
+            {% elif staff_member.grade > 12 %}
+                Sci-Tech Alum
+            {% elif staff_member.grade < 9 %}
+                Sci-Tech Middle Schooler
+            {% endif %}
+            </span>
+            <span class="title">{{ staff_member.title }} at The Dorsal</span>
+        </div>
+        <div class="bio-box">
+            {{ staff_member.bio|linebreaks }}
+        </div>
+    </div>
+
+    <div class="headline-columns-wrapper">
+        <div class="empty col2"><span class="by-same-author">Articles by {{ staff_member.user.first_name }} {{ staff_member.user.last_name }}</span></div>
+        {% for author_article in author_articles %}
+            {% if not forloop.counter|divisibleby:2 %}
+            <div class="article-box col1">
+            {% else %}
+                <div class="article-box col2">
+                {% endif %}
+                    {% image author_article.title_image original as title_image %}
+                    <a href="{% url 'article'  year=author_article.pub_date.year month=author_article.pub_date.month day=author_article.pub_date.day article_title=author_article.url_encoded_title %}"><img src="{{ title_image.url }}" class="title-image"></a>
+                    <div class="headline-wrapper">
+                        <a href="{% url 'article'  year=author_article.pub_date.year month=author_article.pub_date.month day=author_article.pub_date.day article_title=author_article.url_encoded_title %}" class="headline">{{ author_article.title }}</a>
+                        <span class="author-datetime-box">
+                            <a href="{% url 'staff' first_name=author_article.author.user.first_name last_name=author_article.author.user.last_name %}" class="author">by <span class="colored-link">{{ author_article.author }}</span></a>
+                            <span class="datetime">{{ author_article.pub_date|date:"N jS, 'y, P" }}</span>
+                        </span>
+                    </div>
+                    <span class="summary">{{ author_article.get_truncated_prologue }}...</span>
+                </div>
+        {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

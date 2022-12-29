@@ -13,6 +13,7 @@ from home import urls as home_urls
 from home.views import redirect_to_home
 
 from articles import urls as article_urls
+from staff import urls as staff_urls
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),
@@ -22,7 +23,8 @@ urlpatterns = [
 
     path("",redirect_to_home),
     path("home/",include(home_urls),name='home'),
-    path("article/",include(article_urls),name='articles')
+    path("article/",include(article_urls),name='articles'),
+    path("staff/",include(staff_urls),name='staffs'),
 ]
 
 
