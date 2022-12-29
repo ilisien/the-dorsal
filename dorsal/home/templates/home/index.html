@@ -15,7 +15,7 @@
             {% if scitech_articles %}
             {% for article in scitech_articles %}
             <li><div class="by-section-article">
-                <a href="" class="headline">{{ article.title }}</a>
+                <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
                     <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
@@ -32,7 +32,7 @@
             {% if pittsburgh_articles %}
             {% for article in pittsburgh_articles %}
             <li><div class="by-section-article">
-                <a href="" class="headline">{{ article.title }}</a>
+                <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
                     <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
@@ -49,7 +49,7 @@
             {% if politics_articles %}
             {% for article in politics_articles %}
             <li><div class="by-section-article">
-                <a href="" class="headline">{{ article.title }}</a>
+                <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
                     <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
@@ -66,7 +66,7 @@
             {% if technology_articles %}
             {% for article in technology_articles %}
             <li><div class="by-section-article">
-                <a href="" class="headline">{{ article.title }}</a>
+                <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
                     <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
@@ -83,7 +83,7 @@
             {% if sports_articles %}
             {% for article in sports_articles %}
             <li><div class="by-section-article">
-                <a href="" class="headline">{{ article.title }}</a>
+                <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">
                     <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                     <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
@@ -108,9 +108,9 @@
                 <div class="article-box col2">
                 {% endif %}
                     {% image article.title_image original as title_image %}
-                    <a href=""><img src="{{ title_image.url }}" class="title-image"></a>
+                    <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}"><img src="{{ title_image.url }}" class="title-image"></a>
                     <div class="headline-wrapper">
-                        <a href="" class="headline">{{ article.title }}</a>
+                        <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                         <span class="author-datetime-box">
                             <a href="" class="author">by <span class="colored-link">{{ article.author }}</span></a>
                             <span class="datetime">{{ article.pub_date|date:"N jS, 'y, P" }}</span>
