@@ -1,0 +1,17 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/globals_error.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="wrapper">
+    <span class="uhoh">uh oh.</span>
+    <span class="error">Error {{ error_code }}</span>
+    <p class="what-happened">{{ what_happened }}</p>
+    <a class="back" href="/"><span class="colored-link">Go back to home</span></a>
+</div>
+{% endblock content %}

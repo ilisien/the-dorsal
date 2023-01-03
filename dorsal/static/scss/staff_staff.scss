@@ -1,27 +1,12 @@
 @import 'initial';
 @import 'colored_links';
 
-.title-wrapper {
-    display: flex;
-    justify-content: center;
-
-    a.the-dorsal-title {
-        position:absolute;
-        font-family: 'Lment';
-        font-size: 3.5em;
-        top:35px;
-        background: -webkit-linear-gradient(0deg,$primary,$secondary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
 .main-wrapper {
     display: flex;
     flex-direction: column;
     gap:6em;
     align-items: center;
-    margin: 8em 10%;
+    margin: 10em 10%;
 
 
     .staff-desc-box {

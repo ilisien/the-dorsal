@@ -1,0 +1,29 @@
+@import 'initial';
+@import 'colored_links';
+
+.wrapper {
+    margin: 10em 5em 5em 5em;
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+
+    span.uhoh {
+        font-family:"VG5000";
+        font-size:5em;
+    }
+
+    span.error {
+        font-family: "VG5000";
+        font-size: 2.5em;
+    }
+
+    p.what-happened {
+        font-family: "Piazzolla";
+        font-size: 1.5em;
+    }
+
+    a.back {
+        font-family: "Roboto Serif";
+        font-style: italic;
+    }
+}
