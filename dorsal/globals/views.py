@@ -4,7 +4,7 @@ from globals import get_global_context
 
 def error404(request, exception):
     error_code = "404"
-    what_happened = "What you are looking for could not be found. If you reached here by clicking on a link, please come back soon, as this site is still under development"
+    what_happened = "What you are looking for could not be found. If you reached this page by clicking on a link, please come back soon; this site is still under development!"
     context = {
         'error_code':error_code,
         'what_happened':what_happened
@@ -15,7 +15,7 @@ def error404(request, exception):
 
 def error500(request):
     error_code = "500"
-    what_happened = "There was a server error! We're working hard to get it running again!"
+    what_happened = "There is a server problem! We're working hard to get it working again!"
     context = {
         'error_code':error_code,
         'what_happened':what_happened
@@ -26,7 +26,7 @@ def error500(request):
 
 def error403(request, exception):
     error_code = "403"
-    what_happened = "You do not have permission to access this, perhaps you need to log in as a staff member?"
+    what_happened = "You do not have permission to access this page, perhaps you need to log in as a staff member?"
     context = {
         'error_code':error_code,
         'what_happened':what_happened
@@ -48,7 +48,7 @@ def error400(request, exception):
 
 def see404(request):
     error_code = "404"
-    what_happened = "What you are looking for could not be found. If you reached here by clicking on a link, please come back soon, as this site is still under development"
+    what_happened = "What you are looking for could not be found. If you reached this page by clicking on a link, please come back soon; this site is still under development!"
     context = {
         'error_code':error_code,
         'what_happened':what_happened

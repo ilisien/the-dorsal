@@ -6,24 +6,36 @@
     display: flex;
     flex-direction: column;
     gap:2em;
+    align-items: center;
 
     span.uhoh {
         font-family:"VG5000";
-        font-size:5em;
+        font-size:15em;
+        background: -webkit-linear-gradient(0deg,$primary,$secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     span.error {
         font-family: "VG5000";
-        font-size: 2.5em;
+        font-size: 6em;
     }
 
     p.what-happened {
         font-family: "Piazzolla";
-        font-size: 1.5em;
+        font-size: 3em;
+        text-align: center;
+    }
+
+    span.do-you-know {
+        font-family: "Piazzolla";
+        font-size: 2.5em;
+        text-align: center;
     }
 
     a.back {
         font-family: "Roboto Serif";
         font-style: italic;
+        font-size: 2.25em;
     }
 }

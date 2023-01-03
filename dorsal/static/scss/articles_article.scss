@@ -18,7 +18,7 @@
 
 .main-wrapper {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     width:100%;
 
     img.title-image {
@@ -72,7 +72,7 @@
                 p.summary {
                     font-family: "Roboto Serif";
                     font-style: italic;
-                    font-size: 1em;
+                    font-size: 1.25em;
                     line-height: 1.75em;
                     text-indent: 5ch;
                     text-align-last: left;
@@ -88,14 +88,14 @@
 
                 p {
                     font-family: "Roboto Serif";
-                    font-size: 1em;
+                    font-size: 1.25em;
                     line-height: 1.75em;
                     text-align-last: left;
                     text-align: justify;
                 }
                 
                 .image-box {
-                    width:125%;
+                    width:150%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -109,6 +109,7 @@
                     span.image-caption {
                         font-family: "Roboto";
                         font-style: italic;
+                        font-size: 1.1em;
                     }
                 }
             }
