@@ -2,7 +2,7 @@
 @import 'colored_links';
 
 .main-wrapper {
-    margin-top:calc(15vh + 50px);
+    margin-top:calc((15vh + 15vw) / 2);
     display: grid;
     grid-template-columns: 1fr 4fr;
 

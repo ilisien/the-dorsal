@@ -8,6 +8,10 @@
     align-items: center;
     margin: 10em 10%;
 
+    @media (max-aspect-ratio: 3/5) {
+        font-size: 1.5em;
+    }
+
 
     .staff-desc-box {
         display: flex;

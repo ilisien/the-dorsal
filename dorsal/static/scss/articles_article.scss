@@ -21,6 +21,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     width:100%;
 
+    @media (max-aspect-ratio: 3/5) {
+        grid-template-columns: 1fr 5fr 1fr;
+        font-size: 1.5em;
+    }
+
     img.title-image {
         max-width: 100%;
         grid-column: 1 / 4;
