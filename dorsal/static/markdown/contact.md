@@ -1,0 +1,2 @@
+# Contact Us
+Do you have questions, comments, or concerns regarding The Dorsal? Feel free to email us at [contact@thedorsal.org](mailto:contact@thedorsal.org) or email the current lead editor, [Ian Lisien](/staff/ian_lisien), at [ian.lisien@thedorsal.org](mailto:ian.lisien@thedorsal.org).

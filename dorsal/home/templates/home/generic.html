@@ -1,0 +1,14 @@
+{% extends 'globals/base.html' %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load markdownify %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home_generic.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="stuff">
+    {{ text_md|markdownify }}
+</div>
+{% endblock content%}

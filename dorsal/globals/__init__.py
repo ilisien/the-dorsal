@@ -101,8 +101,8 @@ def get_global_context():
         Nav("politics","/politics/"),
         Nav("technology","/tech/"),
         Nav("sports","/sports/"),
-        Nav("photography","/photos/"),
-        Nav("open data","/open-data/"),
+        #Nav("photography","/photos/"),
+        #Nav("open data","/open-data/"),
     ]
     print(period)
 

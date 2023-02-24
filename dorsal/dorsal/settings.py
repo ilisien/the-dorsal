@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'staff',
 
     'django_sass',
+    'markdownify.apps.MarkdownifyConfig',
 
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.forms',
@@ -184,3 +185,17 @@ WAGTAILADMIN_BASE_URL = ''
 TAGGIT_CASE_INSENSITIVE = True
 
 WAGTAILIMAGES_IMAGE_MODEL = 'images.InfoImage'
+
+MARKDOWNIFY = {
+    "default": {
+        "WHITELIST_TAGS": [
+            "h1",
+            "h2",
+            "h3",
+            "a",
+            "b",
+            "p",
+            "em",
+        ]
+    }
+}

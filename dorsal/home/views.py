@@ -3,6 +3,14 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from articles.models import Article,published_articles
 from globals import get_global_context
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.conf import settings
+import os
+
+def grab_md(name):
+    file = staticfiles_storage.url(f'markdown/{name}.md')[1:]
+    with open(file, "r") as f:
+        return f.read()
 
 def redirect_to_home(request):
     return redirect('home/')
@@ -28,8 +36,11 @@ def index(request):
     #print(str(context))
     return render(request,'home/index.html', context)
 
-def contact(request):
-    pass
+def generic(request):
+    text_md = grab_md(request.resolver_match.view_name)
 
-def about(request):
-    pass
+    context = {
+        "text_md":text_md,
+    }
+    context.update(get_global_context())
+    return render(request,'home/generic.html', context)

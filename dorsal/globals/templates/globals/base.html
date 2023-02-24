@@ -23,8 +23,8 @@
                 </svg>
                 <div class="left-nav">
                     <div class="menu-wrapper">
-                        <svg class="hamburger-icon" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 19"><path class="st5" d="M0 1.5h25zm0 8h25zm0 8h25z" fill="none" stroke-linecap="round" stroke-miterlimit="10"/></svg>                    
-                        <svg class="search-icon" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.32 23.07"><path class="st5" d="M11.12 1.5a6.7 6.7 0 0 0-6.7 6.7 6.7 6.7 0 0 0 6.7 6.7 6.7 6.7 0 0 0 6.7-6.7 6.7 6.7 0 0 0-6.7-6.7zM7.02 14l-5.8 8.2Z" fill="none" stroke-linecap="round" stroke-miterlimit="10"/></svg>
+                        {% comment %}<svg class="hamburger-icon" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 19"><path class="st5" d="M0 1.5h25zm0 8h25zm0 8h25z" fill="none" stroke-linecap="round" stroke-miterlimit="10"/></svg>                    
+                        <svg class="search-icon" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.32 23.07"><path class="st5" d="M11.12 1.5a6.7 6.7 0 0 0-6.7 6.7 6.7 6.7 0 0 0 6.7 6.7 6.7 6.7 0 0 0 6.7-6.7 6.7 6.7 0 0 0-6.7-6.7zM7.02 14l-5.8 8.2Z" fill="none" stroke-linecap="round" stroke-miterlimit="10"/></svg>{% endcomment %}                    
                     </div>
                     <div class="datetime-info">
                         <span class="date-info">{{ datetime|date:"l, F jS, Y" }}</span>
@@ -57,29 +57,28 @@
                     <div class="infos">
                         <ul class="about">
                             <li class="title">information</li>
-                            <li><a href="">about</a></li>
-                            <li><a href="">staff</a></li>
-                            <li><a href="">contact</a></li>
-                            <li><a href="">open source</a></li>
+                            <li><a href="/home/about">about</a></li>
+                            {% comment %}<li><a href="/staff/">staff</a></li>{% endcomment %}
+                            <li><a href="/home/contact">contact</a></li>
+                            <li><a href="/home/open-source">open source</a></li>
                         </ul>
                         <ul class="support">
                             <li class="title">support</li>
-                            <li><a href="">apply</a></li>
-                            <li><a href="">subscribe</a></li>
-                            <li><a href="">merchandise</a></li>
+                            <li><a href="/home/advertise">advertise</a></li>
+                            <li><a href="/home/apply">apply</a></li>
+                            <li><a href="/home/write">write</a></li>
                         </ul>
                         <ul class="get">
                             <li class="title">get the dorsal</li>
-                            <li><a href="">physical newsletter</a></li>
-                            <li><a href="">dorsal for classrooms</a></li>
-                            <li><a href="">video</a></li>
+                            <li><a href="/home/physical-newspaper">physical newspaper</a></li>
+                            <li><a href="/home/subscribe">subscribe</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer-bottom">
                     <span class="ownership-info">All website code is licensed under the <a href="https://choosealicense.com/licenses/mit/">MIT License</a> and open sourced <a href="https://github.com/ilisien/the-dorsal">here</a>.</span>
                     <span class="credit">Images are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</span>
-                    <span class="credit">Articles are copyrighted 2022 by their respective authors.</span>
+                    <span class="credit">Articles are copyrighted 2023 by their respective authors.</span>
                 </div>
 
             </div>

@@ -1,0 +1,2 @@
+# Open Source at The Dorsal
+This website was not built with a graphical website builder service, instead it relies on a server-side Python web framework called Django, a markdown language called HTML, and a style sheet language called SCSS. Because of the collaborative nature of the project, code is _publicly_ provided to anyone who wishes to view or modify it, this concept is termed [open&nbsp;source&nbsp;software](https://en.wikipedia.org/wiki/Open-source_software). The source code for this project can be found [here](https://github.com/ilisien/the-dorsal).
