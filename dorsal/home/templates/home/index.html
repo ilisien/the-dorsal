@@ -100,6 +100,7 @@
         <div class="column-header">
         </div>
         <div class="headline-columns-wrapper">
+            {% if recent_articles %}
             <div class="empty col2"></div>
             {% for article in recent_articles %}
                 {% if not forloop.counter|divisibleby:2 %}
@@ -119,6 +120,9 @@
                     <span class="summary">{{ article.get_truncated_prologue }}...</span>
                 </div>
             {% endfor %}
+            {% else %}
+            <span class="oops">There aren't any articles here yet! Perhaps you'd like to <a class="colored-link" href="/home/apply">apply</a> to write one?</span>
+            {% endif %}
         </div>
         <div class="column-footer">
             
