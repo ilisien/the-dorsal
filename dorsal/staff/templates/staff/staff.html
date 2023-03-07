@@ -11,7 +11,7 @@
 <div class="main-wrapper">
     <div class="staff-desc-box">
         <div class="titles-box">
-            <span class="name">{{ staff_member.user.first_name }} {{ staff_member.user.last_name }}</span>
+            <span class="name">{{ staff_member.user.first_name }} {{ staff_member.user.last_name }} <span class="pronoun_box">({{ staff_member.pronouns }})</span></span>
             <span class="grade">
             {% if staff_member.grade == 9 %}
                 Sci-Tech Freshman

@@ -31,8 +31,16 @@
         grid-column: 1 / 4;
     }
 
-    .left_column {
+    .left-column {
+        .caption {
+            padding:10px;
 
+            span.image-caption {
+                font-family: "Roboto";
+                font-style: italic;
+                font-size: 1.1em;
+            }
+        }
     }
     
     .center-column {
@@ -133,7 +141,7 @@
                 flex-direction: column;
 
                 .about-the-author {
-                    background: linear-gradient(90deg,$primary,$secondary);
+                    background: linear-gradient(135deg,$purple,$blue);
                     padding:2em;
                     border-radius: 1em;
                     display: flex;
