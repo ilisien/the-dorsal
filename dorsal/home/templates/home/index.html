@@ -44,23 +44,6 @@
             <span class="oops">No recent articles in this section.</span>
             {% endif %}
         </ul>
-        <span class="section-title">politics</span>
-        <ul class="politics">
-            {% if politics_articles %}
-            {% for article in politics_articles %}
-            <li><div class="by-section-article">
-                <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
-                <span class="author-datetime-box">
-                    <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
-                    <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
-                </span>
-                <span class="summary">{{ article.prologue|slice:75 }}...</span>
-            </div></li>
-            {% endfor %}
-            {% else %}
-            <span class="oops">No recent articles in this section.</span>
-            {% endif %}
-        </ul>
         <span class="section-title">technology</span>
         <ul class="technology">
             {% if technology_articles %}
@@ -78,10 +61,27 @@
             <span class="oops">No recent articles in this section.</span>
             {% endif %}
         </ul>
-        <span class="section-title">sports</span>
+        <span class="section-title">pop culture</span>
         <ul class="sports">
-            {% if sports_articles %}
-            {% for article in sports_articles %}
+            {% if pop_culture_articles %}
+            {% for article in pop_culture_articles %}
+            <li><div class="by-section-article">
+                <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
+                <span class="author-datetime-box">
+                    <a href="{% url 'staff' first_name=article.author.user.first_name last_name=article.author.user.last_name %}" class="author">by <span class="colored-link">{{ article.author }}</span></a>
+                    <span class="datetime">{{ article.pub_date|date:"N jS, 'y" }}</span>
+                </span>
+                <span class="summary">{{ article.prologue|slice:75 }}...</span>
+            </div></li>
+            {% endfor %}
+            {% else %}
+            <span class="oops">No recent articles in this section.</span>
+            {% endif %}
+        </ul>
+        <span class="section-title">editorial</span>
+        <ul class="sports">
+            {% if editorial_articles %}
+            {% for article in editorial_articles %}
             <li><div class="by-section-article">
                 <a href="{% url 'article'  year=article.pub_date.year month=article.pub_date.month day=article.pub_date.day article_title=article.url_encoded_title %}" class="headline">{{ article.title }}</a>
                 <span class="author-datetime-box">

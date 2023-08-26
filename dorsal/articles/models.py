@@ -17,9 +17,11 @@ class Article(models.Model):
         UNASSIGNED = "UNA", "unassigned"
         AT_SCITECH = 'SCT', "at scitech"
         IN_PITTSBURGH = "PIT", "in pittsburgh"
-        POLITICS = "POL", "politics"
+        POLITICS = "POL", "politics" # currently not displayed
         TECHNOLOGY = "TEC", "technology"
-        SPORTS = "SPT", "sports"
+        SPORTS = "SPT", "sports" # currently not displayed
+        POP_CULTURE = "POP", "pop culture"
+        EDITORIAL = "EDT", "editorial"
         BLOG = "BLG", "blog"
     
     class Priority(models.IntegerChoices):

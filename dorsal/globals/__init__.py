@@ -98,9 +98,11 @@ def get_global_context():
     navlinks = [
         Nav("at scitech","/scitech/"),
         Nav("in pittsburgh","/pittsburgh/"),
-        Nav("politics","/politics/"),
+        #Nav("politics","/politics/"),
         Nav("technology","/tech/"),
-        Nav("sports","/sports/"),
+        #Nav("sports","/sports/"),
+        Nav("pop culture","/pop/"),
+        Nav("editorial","/editorials/")
         #Nav("photography","/photos/"),
         #Nav("open data","/open-data/"),
     ]

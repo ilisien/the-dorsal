@@ -1,0 +1,2 @@
+# Advertising with The Dorsal
+The Dorsal publishes monthly [physical&nbsp;newspaper&nbsp;pamphlets](/home/physical-newspaper) during the school year. As of the August 2023 issue, this pamphlet contains 4 pages as half-letter (5.5 by 8.5) size paper. Starting with the September 2023 issue, the back cover will be prioritized for advertisements with (sparse) color. [Contact&nbsp;us](/home/contact) if you are interested in placing an advertisement.

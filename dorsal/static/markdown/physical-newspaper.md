@@ -1,0 +1,2 @@
+# Physical Pamphlets
+The Dorsal publishes physical pamphlets of articles on the last Wednesday of the month during school (generally during advisory period). If you are not a student at Pittsburgh Sci-Tech, you can sign up to recieve the PDFs we print upon publication (or request any previous issue), just [contact us!](/home/contact)

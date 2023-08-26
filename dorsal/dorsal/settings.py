@@ -25,7 +25,7 @@ with open(os.path.join(BASE_DIR,"dorsal/secret.txt")) as secret_file:
     SECRET_KEY = secret_file.read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 with open(os.path.join(BASE_DIR,"dorsal/allowed_hosts.txt")) as hosts_file:
     lines = hosts_file.readlines()
@@ -103,10 +103,17 @@ WSGI_APPLICATION = 'dorsal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+with open(os.path.join(BASE_DIR,"dorsal/postgres_password.txt")) as postgres_file:
+    postgres_password = postgres_file.read()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'thedorsal',
+        'USER': 'thedorsaluser',
+        'PASSWORD': postgres_password,
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
