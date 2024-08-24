@@ -12,5 +12,4 @@ urlpatterns = [
     path('physical-newspaper/',views.generic,name='physical-newspaper'),
     #path('subscribe/',views.generic,name='subscribe'),
     path('fonts/',views.generic,name='fonts'),
-
 ]

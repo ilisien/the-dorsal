@@ -6,6 +6,7 @@ from globals import get_global_context
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.conf import settings
 import os
+from django.http import FileResponse
 
 def grab_md(name):
     file = staticfiles_storage.url(f'markdown/{name}.md')[1:]
@@ -48,3 +49,7 @@ def generic(request):
     }
     context.update(get_global_context())
     return render(request,'home/generic.html', context)
+
+def aug2023_pdf(request):
+    filepath = os.path.join('static','issues','aug2023.pdf')
+    return FileResponse(open(filepath, 'rb'), content_type='application/pdf')

@@ -25,12 +25,12 @@ class Schedules:
 Nav = namedtuple("Nav",("str","path"))
 
 def get_period(datetime,schedule=None):
-    time = timezone.localtime(datetime).strftime("%H:%M")
+    time = datetime.strftime("%H:%M")
 
     if schedule == None:
-        if timezone.localtime(datetime).weekday() == 2:
+        if datetime.weekday() == 2:
             schedule = Schedules.WEDNESDAY
-        elif timezone.localtime(datetime).weekday() in [5,6]:
+        elif datetime.weekday() in [5,6]:
             schedule = Schedules.WEEKEND
             period = Periods.NO_SCHOOL
         else:
@@ -106,10 +106,9 @@ def get_global_context():
         #Nav("photography","/photos/"),
         #Nav("open data","/open-data/"),
     ]
-    print(period)
 
     context = {
-        'datetime':timezone.localtime(datetime),
+        'datetime':datetime,
         'period':period,
         'navlinks':navlinks,
     }
