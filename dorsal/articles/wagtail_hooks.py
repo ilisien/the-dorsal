@@ -1,6 +1,6 @@
 from wagtail import hooks
-from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
-from wagtail.contrib.modeladmin.views import CreateView, EditView
+from wagtail_modeladmin.options import ModelAdmin, modeladmin_register
+from wagtail_modeladmin.views import CreateView, EditView
 from .models import Article
 
 from wagtail.admin.panels import FieldRowPanel, FieldPanel, ObjectList

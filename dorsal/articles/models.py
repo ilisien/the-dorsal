@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 from wagtail.fields import RichTextField
-from wagtail.contrib.modeladmin.options import ModelAdmin
+from wagtail_modeladmin.options import ModelAdmin
 from wagtail.admin.panels import FieldPanel, FieldRowPanel
 
 from staff.models import Profile

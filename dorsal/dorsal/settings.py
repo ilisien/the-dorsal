@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django_sass',
     'markdownify.apps.MarkdownifyConfig',
 
-    'wagtail.contrib.modeladmin',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
