@@ -1,4 +1,4 @@
-from wagtail.core import hooks
+from wagtail import hooks
 from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register
 from wagtail.contrib.modeladmin.views import CreateView, EditView
 from .models import Article

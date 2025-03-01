@@ -1,6 +1,6 @@
 from django.utils.html import format_html
 from django.utils.html import mark_safe
-from wagtail.admin.edit_handlers import Panel
+from wagtail.admin.panels import Panel
 
 # almost entirely created by @BertrandBordage on github in the below wagtail issue, slight modernization by ilisien to allow for it to work in wagtail 3.1
 class ReadOnlyPanel(Panel):
