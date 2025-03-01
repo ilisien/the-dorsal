@@ -150,4 +150,7 @@ class ArticleAdmin(ModelAdmin):
     create_view_class = ArticleCreateView
     edit_view_class = ArticleEditView
 
+   # index_template_name = "wagtailmodeladmin/generic/index.html"  # Use Wagtail's default template
+
+
 modeladmin_register(ArticleAdmin)
