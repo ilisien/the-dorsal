@@ -1,11 +1,13 @@
 anyascii==0.3.1
 asgiref==3.5.2
 beautifulsoup4==4.9.3
+bleach==6.2.0
 certifi==2022.6.15
 charset-normalizer==2.1.0
 Django==4.0.7
 django-filter==21.1
 django-js-asset==2.0.0
+django-markdownify==0.9.5
 django-modelcluster==6.0
 django-permissionedforms==0.1
 django-sass==1.1.0
@@ -19,8 +21,10 @@ html5lib==1.1
 idna==3.3
 l18n==2021.3
 libsass==0.21.0
+Markdown==3.7
 openpyxl==3.0.10
 Pillow==9.2.0
+psycopg2==2.9.10
 pytz==2022.1
 requests==2.28.1
 six==1.16.0
@@ -28,8 +32,10 @@ soupsieve==2.3.2.post1
 sqlparse==0.4.2
 tablib==3.2.1
 telepath==0.2
+tinycss2==1.4.0
+tzdata==2025.1
 urllib3==1.26.11
-wagtail==3.0.1
+wagtail==4.0
 webencodings==0.5.1
 Willow==1.4.1
 xlrd==2.0.1
