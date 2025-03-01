@@ -1,4 +1,4 @@
-import backports.zoneinfo as zoneinfo
+import zoneinfo
 from django.conf import settings
 from django.utils import timezone
 from collections import namedtuple

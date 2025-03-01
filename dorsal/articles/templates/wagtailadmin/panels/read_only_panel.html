@@ -1,0 +1,6 @@
+{# templates/wagtailadmin/panels/read_only_panel.html #}
+<div class="field" {{ panel.get_style }}>
+    <label>{{ panel.heading }}</label>
+    <div class="field-content">{{ panel.value }}</div>
+    {{ panel.hidden_input }}
+</div>

@@ -24,7 +24,7 @@ with open(os.path.join(BASE_DIR,"dorsal/secret.txt")) as secret_file:
     SECRET_KEY = secret_file.read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 with open(os.path.join(BASE_DIR,"dorsal/allowed_hosts.txt")) as hosts_file:
     lines = hosts_file.readlines()
@@ -112,7 +112,7 @@ DATABASES = {
         'USER': 'thedorsaluser',
         'PASSWORD': postgres_password,
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 

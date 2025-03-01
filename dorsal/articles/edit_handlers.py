@@ -1,9 +1,9 @@
 from django.utils.html import format_html
 from django.utils.html import mark_safe
-from wagtail.admin.edit_handlers import EditHandler
+from wagtail.admin.edit_handlers import Panel
 
 # almost entirely created by @BertrandBordage on github in the below wagtail issue, slight modernization by ilisien to allow for it to work in wagtail 3.1
-class ReadOnlyPanel(EditHandler):
+class ReadOnlyPanel(Panel):
     """ ReadOnlyPanel EditHandler Class - built from ideas on https://github.com/wagtail/wagtail/issues/2893
         Most credit to @BertrandBordage for this.
         Usage:
@@ -36,7 +36,7 @@ class ReadOnlyPanel(EditHandler):
             value=None,
         )
     
-    class BoundPanel(EditHandler.BoundPanel):
+    class BoundPanel(Panel.BoundPanel):
         def get_value(self):
             # try to get the value of field, return empty string if failed
             try:
@@ -92,3 +92,4 @@ class ReadOnlyPanel(EditHandler):
                 '{}'
                 '</div>',
                 format_html(self.get_style()), self.heading_tag('label'), self.render(), self.hidden_input()) 
+        template_name = "wagtailadmin/panels/read_only_panel.html"
