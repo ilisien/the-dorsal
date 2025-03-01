@@ -9,6 +9,8 @@ from django.templatetags.static import static
 from django.utils.safestring import mark_safe
 
 from .edit_handlers import ReadOnlyPanel
+from django.shortcuts import redirect
+from django.urls import reverse
 
 # panel presets, for different types of admin views
 readonly_panels = [
@@ -99,41 +101,44 @@ superuser_panels = [
 
 
 class ArticleCreateView(CreateView):
-    # view refrenced when an Article model is created in the admin site
-    def setup(self, request, *args, **kwargs):
-        super().setup(request, *args, **kwargs)
+    model = Article
+    template_name = "wagtailadmin/article_create.html"
+    fields = ['title', 'content']
 
-        instance = self.get_instance()
-        user = request.user
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        user = self.request.user
 
-        if user.is_superuser: # is user a superuser?
-            panels = superuser_panels
-        elif user == instance.author: # is user editing their own article?
-            panels = author_panels
-        else:
-            pass
-        self.edit_handler = ObjectList(panels).bind_to_model(model=Article)
+        # Get the Profile instance linked to the user
+        profile = user.profile  # Assuming you have a Profile related to the user
+
+        # Assign the profile (not the user) to the article author
+        kwargs['instance'] = Article(author=profile)  # Automatically assign the author's profile
+
+        return kwargs
+
+    def form_valid(self, form):
+        article = form.save()
+        return super().form_valid(form)
 
 class ArticleEditView(EditView):
-    # view refrenced when an Article model is edited in the admin site
     def setup(self, request, *args, **kwargs):
         super().setup(request, *args, **kwargs)
 
         instance = self.get_instance()
         user = request.user
 
-        if user.is_superuser: # is user a superuser?
-            panels = superuser_panels
-        elif user == instance.author: # is user editing their own article?
-            panels = author_panels
-        else: # if user is neither a superuser nor editing their own article
-            if user.groups.filter(name="Editors").exists() and instance.needs_approval: # is user a part of the "Editors" group? and the article needs editing?
-                panels = editor_panels
-            else: # is user a non-editor looking at an article that is not their own?
-                panels = readonly_panels
-            
-        print(request.user)
+        if user.is_superuser:
+            panels = superuser_panels  # Full access for superusers
+        elif user.profile == instance.author:
+            panels = author_panels  # Authors can edit their own articles
+        elif user.groups.filter(name="Editors").exists() and instance.needs_approval:
+            panels = editor_panels  # Editors can edit articles needing approval
+        else:
+            panels = readonly_panels  # Read-only for others
+
         self.edit_handler = ObjectList(panels).bind_to_model(model=Article)
+
 
 class ArticleAdmin(ModelAdmin):
     # Modeladmin basic configuration mostly
@@ -150,6 +155,11 @@ class ArticleAdmin(ModelAdmin):
     create_view_class = ArticleCreateView
     edit_view_class = ArticleEditView
 
+    def get_menu_items(self, request):
+        menu_items = super().get_menu_items(request)
+        if not request.user.has_perm("app.view_article"):
+            return []  # Hide menu if no permissions
+        return menu_items
    # index_template_name = "wagtailmodeladmin/generic/index.html"  # Use Wagtail's default template
 
 
