@@ -16,6 +16,10 @@
     }
 }
 
+.main-wrapper > img.title-image {
+    width: 100%;
+}
+
 .main-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -27,7 +31,6 @@
     }
 
     img.title-image {
-        max-width: 100%;
         grid-column: 1 / 4;
     }
 

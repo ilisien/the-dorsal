@@ -96,13 +96,13 @@ def get_global_context():
     datetime = timezone.now()
     period = get_period(datetime)
     navlinks = [
-        Nav("at scitech","/scitech/"),
-        Nav("in pittsburgh","/pittsburgh/"),
+        Nav("at scitech","/sections/scitech/"),
+        Nav("in pittsburgh","/sections/pittsburgh/"),
         #Nav("politics","/politics/"),
-        Nav("technology","/tech/"),
+        Nav("technology","/sections/tech/"),
         #Nav("sports","/sports/"),
-        Nav("pop culture","/pop/"),
-        Nav("editorial","/editorials/")
+        Nav("pop culture","/sections/pop/"),
+        Nav("editorial","/sections/editorials/")
         #Nav("photography","/photos/"),
         #Nav("open data","/open-data/"),
     ]

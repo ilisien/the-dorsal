@@ -41,6 +41,96 @@ def index(request):
     #print(str(context))
     return render(request,'home/index.html', context)
 
+def scitech_section(request):
+    articles = published_articles.filter(section=Article.Section.AT_SCITECH).order_by('-pub_date')[:20]
+    #pittsburgh_articles = published_articles.filter(section=Article.Section.IN_PITTSBURGH).order_by('-pub_date')[:3]    
+    #politics_articles = published_articles.filter(section=Article.Section.POLITICS).order_by('-pub_date')[:3]
+    #tech_articles = published_articles.filter(section=Article.Section.TECHNOLOGY).order_by('-pub_date')[:3]
+    #sports_articles = published_articles.filter(section=Article.Section.SPORTS).order_by('-pub_date')[:3]
+    #pop_culture_articles = published_articles.filter(section=Article.Section.POP_CULTURE).order_by('-pub_date')[:3]
+    #editorial_articles = published_articles.filter(section=Article.Section.EDITORIAL).order_by('-pub_date')[:3]
+    #recent_nonprioritized = published_articles.order_by('-pub_date').values_list('pk',flat=True)[:20]
+    #recent_articles = published_articles.filter(pk__in=list(recent_nonprioritized)).order_by('-priority')
+
+    context = {
+        'articles':articles,
+    }
+    context.update(get_global_context())
+    #print(str(context))
+    return render(request,'home/section.html', context)
+
+def pittsburgh_section(request):
+    #scitech_articles = published_articles.filter(section=Article.Section.AT_SCITECH).order_by('-pub_date')[:3]
+    articles = published_articles.filter(section=Article.Section.IN_PITTSBURGH).order_by('-pub_date')[:20]    
+    #politics_articles = published_articles.filter(section=Article.Section.POLITICS).order_by('-pub_date')[:3]
+    #tech_articles = published_articles.filter(section=Article.Section.TECHNOLOGY).order_by('-pub_date')[:3]
+    #sports_articles = published_articles.filter(section=Article.Section.SPORTS).order_by('-pub_date')[:3]
+    #pop_culture_articles = published_articles.filter(section=Article.Section.POP_CULTURE).order_by('-pub_date')[:3]
+    #editorial_articles = published_articles.filter(section=Article.Section.EDITORIAL).order_by('-pub_date')[:3]
+    #recent_nonprioritized = published_articles.order_by('-pub_date').values_list('pk',flat=True)[:20]
+    #recent_articles = published_articles.filter(pk__in=list(recent_nonprioritized)).order_by('-priority')
+
+    context = {
+        'articles':articles,
+    }
+    context.update(get_global_context())
+    #print(str(context))
+    return render(request,'home/section.html', context)
+
+def technology_section(request):
+    #scitech_articles = published_articles.filter(section=Article.Section.AT_SCITECH).order_by('-pub_date')[:3]
+    #pittsburgh_articles = published_articles.filter(section=Article.Section.IN_PITTSBURGH).order_by('-pub_date')[:3]    
+    #politics_articles = published_articles.filter(section=Article.Section.POLITICS).order_by('-pub_date')[:3]
+    articles = published_articles.filter(section=Article.Section.TECHNOLOGY).order_by('-pub_date')[:20]
+    #sports_articles = published_articles.filter(section=Article.Section.SPORTS).order_by('-pub_date')[:3]
+    #pop_culture_articles = published_articles.filter(section=Article.Section.POP_CULTURE).order_by('-pub_date')[:3]
+    #editorial_articles = published_articles.filter(section=Article.Section.EDITORIAL).order_by('-pub_date')[:3]
+    #recent_nonprioritized = published_articles.order_by('-pub_date').values_list('pk',flat=True)[:20]
+    #recent_articles = published_articles.filter(pk__in=list(recent_nonprioritized)).order_by('-priority')
+
+    context = {
+        'articles':articles,
+    }
+    context.update(get_global_context())
+    #print(str(context))
+    return render(request,'home/section.html', context)
+
+def pop_culture_section(request):
+    #scitech_articles = published_articles.filter(section=Article.Section.AT_SCITECH).order_by('-pub_date')[:3]
+    #pittsburgh_articles = published_articles.filter(section=Article.Section.IN_PITTSBURGH).order_by('-pub_date')[:3]    
+    #politics_articles = published_articles.filter(section=Article.Section.POLITICS).order_by('-pub_date')[:3]
+    #tech_articles = published_articles.filter(section=Article.Section.TECHNOLOGY).order_by('-pub_date')[:3]
+    #sports_articles = published_articles.filter(section=Article.Section.SPORTS).order_by('-pub_date')[:3]
+    articles = published_articles.filter(section=Article.Section.POP_CULTURE).order_by('-pub_date')[:20]
+    #editorial_articles = published_articles.filter(section=Article.Section.EDITORIAL).order_by('-pub_date')[:3]
+    #recent_nonprioritized = published_articles.order_by('-pub_date').values_list('pk',flat=True)[:20]
+    #recent_articles = published_articles.filter(pk__in=list(recent_nonprioritized)).order_by('-priority')
+
+    context = {
+        'articles':articles,
+    }
+    context.update(get_global_context())
+    #print(str(context))
+    return render(request,'home/section.html', context)
+
+def editorial_section(request):
+    #scitech_articles = published_articles.filter(section=Article.Section.AT_SCITECH).order_by('-pub_date')[:3]
+    #pittsburgh_articles = published_articles.filter(section=Article.Section.IN_PITTSBURGH).order_by('-pub_date')[:3]    
+    #politics_articles = published_articles.filter(section=Article.Section.POLITICS).order_by('-pub_date')[:3]
+    #tech_articles = published_articles.filter(section=Article.Section.TECHNOLOGY).order_by('-pub_date')[:3]
+    #sports_articles = published_articles.filter(section=Article.Section.SPORTS).order_by('-pub_date')[:3]
+    #pop_culture_articles = published_articles.filter(section=Article.Section.POP_CULTURE).order_by('-pub_date')[:3]
+    articles = published_articles.filter(section=Article.Section.EDITORIAL).order_by('-pub_date')[:20]
+    #recent_nonprioritized = published_articles.order_by('-pub_date').values_list('pk',flat=True)[:20]
+    #recent_articles = published_articles.filter(pk__in=list(recent_nonprioritized)).order_by('-priority')
+
+    context = {
+        'articles':articles,
+    }
+    context.update(get_global_context())
+    #print(str(context))
+    return render(request,'home/section.html', context)
+
 def generic(request):
     text_md = grab_md(request.resolver_match.view_name)
 

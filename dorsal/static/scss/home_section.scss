@@ -1,0 +1,114 @@
+@import 'initial';
+@import 'colored_links';
+
+.main-wrapper {
+    margin-top:calc((15vh + 15vw) / 2);
+    display: flex;
+    justify-content: center;
+
+    @media (max-width:1250px) {
+        margin-top:calc(15vh);
+        grid-template-columns: 1fr;
+        font-size: 1.5vh;       
+    }
+    margin-left: 5vw;
+    margin-right:5vw;
+
+    .column-bar {
+        width:50%;
+        .column-header {
+            span.column-title {
+                font-family: "Roboto";
+                font-style: italic;
+                font-size: 1.5em;
+            }
+            padding:0 5vw 2.5vw 5vw;
+        }
+        .column-footer {
+            padding:5vw 5vw 5vw 5vw;
+        }
+    }
+
+    .headline-columns-wrapper {
+        padding:0 5vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: dense;
+        gap:2.5vw;
+
+        .col1 {
+            grid-column: 1;
+        }
+
+        .col2 {
+            grid-column: 2;
+        }
+
+        .empty {
+            height: 15vw;
+            width: 100%;
+            grid-row: span 1;
+        }
+
+        .oops {
+            font-family: "Roboto Serif";
+            font-size:1.5em;
+            grid-column: 1/3;
+        }
+
+        @media (max-aspect-ratio: 3/4) {
+            grid-template-columns: 1fr;
+            gap:3.5vh;
+
+            .col1 {
+                grid-column: 1;
+            }
+    
+            .col2 {
+                grid-column: 1;
+            }
+
+            .empty {
+                display: none;
+            }
+        }
+
+        .article-box {
+            grid-row:span 2;
+            height:fit-content;
+
+            img {
+                width:100%;
+                height:auto;
+            }
+
+            .headline-wrapper {
+                a.headline {
+                    font-family: "Roboto Serif";
+                    font-style: italic;
+                    font-size: 1.75em;
+                }
+                
+                span.author-datetime-box {
+                    display:flex;
+                    gap:3ch;
+                    margin-bottom: 5px;
+
+                    a.author {
+                        font-family: "Piazzolla";
+                        font-style:italic;
+                    }
+
+                    span.datetime {
+                        font-family: "Piazzolla";
+                    }
+                }
+            }
+
+            span.summary {
+                font-family: "Roboto Serif";
+                font-weight: 300;
+            }
+        }
+    }
+}

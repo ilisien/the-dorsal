@@ -12,4 +12,9 @@ urlpatterns = [
     path('physical-newspaper/',views.generic,name='physical-newspaper'),
     #path('subscribe/',views.generic,name='subscribe'),
     path('fonts/',views.generic,name='fonts'),
+    path('scitech/',views.scitech_section,name='at-scitech'),
+    path('pittsburgh/',views.pittsburgh_section,name='in-pittsburgh'),
+    path('tech/',views.technology_section,name='technology'),
+    path('pop/',views.pop_culture_section,name='pop-culture'),
+    path('editorials/',views.editorial_section,name='editorial'),
 ]

@@ -56,6 +56,7 @@ urlpatterns = [
     path("home/",include(home_urls),name='home'),
     path("article/",include(article_urls),name='articles'),
     path("staff/",include(staff_urls),name='staffs'),
+    path("sections/",include(home_urls),name='sections')
 ]
 
 
