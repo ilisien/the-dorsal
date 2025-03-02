@@ -24,7 +24,7 @@ with open(os.path.join(BASE_DIR,"dorsal/secret.txt")) as secret_file:
     SECRET_KEY = secret_file.read()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 with open(os.path.join(BASE_DIR,"dorsal/allowed_hosts.txt")) as hosts_file:
     lines = hosts_file.readlines()
@@ -151,7 +151,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -166,13 +166,13 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+APPEND_SLASH = True
 # WAGTAIL SETTINGS
 
 # This is the human-readable name of your Wagtail install
 # which welcomes users upon login to the Wagtail admin.
 WAGTAIL_SITE_NAME = 'Sci-Tech Dorsal'
-WAGTAILADMIN_BASE_URL = ''
+WAGTAILADMIN_BASE_URL = '/admin'
 # Replace the search backend
 #WAGTAILSEARCH_BACKENDS = {
 #  'default': {
