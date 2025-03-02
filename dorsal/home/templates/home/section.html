@@ -12,8 +12,9 @@
         <div class="column-header">
         </div>
         <div class="headline-columns-wrapper">
-            {% if articles %}
-            <div class="empty col2"></div>
+            <div class="empty col2">
+                <p class="section-title">articles in the "{{ section_name }}" section</p>
+            </div>
             {% for article in articles %}
                 {% if not forloop.counter|divisibleby:2 %}
                 <div class="article-box col1">
@@ -32,9 +33,6 @@
                     <span class="summary">{{ article.get_truncated_prologue }}...</span>
                 </div>
             {% endfor %}
-            {% else %}
-            <span class="oops">See the PDF of the most recent issue <a class="colored-link" href="https://thedorsal.org/static/issues/aug2023.pdf">here</a>.</span>
-            {% endif %}
         </div>
         <div class="column-footer">
             

@@ -54,6 +54,7 @@ def scitech_section(request):
 
     context = {
         'articles':articles,
+        'section_name':"at scitech",
     }
     context.update(get_global_context())
     #print(str(context))
@@ -72,6 +73,7 @@ def pittsburgh_section(request):
 
     context = {
         'articles':articles,
+        'section_name':"in pittsburgh",
     }
     context.update(get_global_context())
     #print(str(context))
@@ -90,6 +92,7 @@ def technology_section(request):
 
     context = {
         'articles':articles,
+        'section_name':"technology",
     }
     context.update(get_global_context())
     #print(str(context))
@@ -108,6 +111,7 @@ def pop_culture_section(request):
 
     context = {
         'articles':articles,
+        'section_name':"pop culture",
     }
     context.update(get_global_context())
     #print(str(context))
@@ -126,6 +130,7 @@ def editorial_section(request):
 
     context = {
         'articles':articles,
+        'section_name':"editorial"
     }
     context.update(get_global_context())
     #print(str(context))

@@ -15,7 +15,7 @@
     margin-right:5vw;
 
     .column-bar {
-        width:50%;
+        width:75%;
         .column-header {
             span.column-title {
                 font-family: "Roboto";
@@ -26,6 +26,16 @@
         }
         .column-footer {
             padding:5vw 5vw 5vw 5vw;
+        }
+        .empty.col2 {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            p.section-title {
+                font-family: 'vg5000';
+                font-size: 2vw;
+            }
         }
     }
 
@@ -70,6 +80,11 @@
 
             .empty {
                 display: none;
+            }
+            
+            .empty.col2 {
+                justify-content: center;
+                align-items: end;
             }
         }
 
