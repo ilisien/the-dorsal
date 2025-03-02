@@ -12,6 +12,8 @@ from .edit_handlers import ReadOnlyPanel
 from django.shortcuts import redirect
 from django.urls import reverse
 
+from wagtail.admin.forms.models import WagtailAdminModelForm
+
 # panel presets, for different types of admin views
 readonly_panels = [
     ReadOnlyPanel("author"),
@@ -103,18 +105,29 @@ superuser_panels = [
 class ArticleCreateView(CreateView):
     model = Article
     template_name = "wagtailadmin/article_create.html"
-    fields = ['title', 'content']
+
+    def get_edit_handler(self):
+        # Determine which panels to use based on the user's role
+        user = self.request.user
+        if user.is_superuser:
+            panels = superuser_panels
+        elif user.groups.filter(name="Authors").exists():
+            panels = author_panels
+        elif user.groups.filter(name="Editors").exists():
+            panels = editor_panels
+        else:
+            panels = readonly_panels
+
+        # Bind the panels to the model and return the edit handler
+        return ObjectList(panels).bind_to_model(model=Article)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         user = self.request.user
-
-        # Get the Profile instance linked to the user
         profile = user.profile  # Assuming you have a Profile related to the user
 
         # Assign the profile (not the user) to the article author
         kwargs['instance'] = Article(author=profile)  # Automatically assign the author's profile
-
         return kwargs
 
     def form_valid(self, form):
