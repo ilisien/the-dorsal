@@ -1,6 +1,22 @@
 {# templates/wagtailadmin/panels/read_only_panel.html #}
-<div class="field" {{ panel.get_style }}>
-    <label>{{ panel.heading }}</label>
-    <div class="field-content">{{ panel.value }}</div>
-    {{ panel.hidden_input }}
+<div class="w-field w-field--readonly {{ class }}" {{ style|safe }}>
+    <div class="w-field__wrapper">
+        <div class="w-field__label">
+            <label>{{ heading }}</label>
+        </div>
+        
+        <div class="w-field__input">
+            <div class="w-field__readonly-text">
+                {{ value|default:"-" }}
+            </div>
+        </div>
+        
+        {% if help_text %}
+        <div class="w-field__help">
+            {{ help_text }}
+        </div>
+        {% endif %}
+        
+        {{ hidden_input|safe }}
+    </div>
 </div>
